@@ -41,6 +41,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
+Route::get('/perfil', function () {
+    return view('user/perfil');
+});
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.home');
