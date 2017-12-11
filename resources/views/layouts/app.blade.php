@@ -214,7 +214,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 footer-col">
                 <div class="logofooter">Race-tic</div>
-                <p>Empresa Nº1 en diagnostico a coches en tiempo real</p>
+                <p>Empresa Nº1 en diagnostico de coches en tiempo real</p>
                 <p><i class="fa fa-map-pin"></i> Donostia , San-Sebastian</p>
                 <p><i class="fa fa-phone"></i>  +34 9999 999 999</p>
                 <p><i class="fa fa-envelope"></i> E-mail : racetic17@gmail.com</p>
