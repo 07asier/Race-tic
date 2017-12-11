@@ -6,7 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use DB;
+use Mail;
+use App\Mail\EmailVerification;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Jobs\SendVerificationEmail;
@@ -70,25 +72,56 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'email_token' =>base64_encode($data['email'])
+            'email_token' => str_random(10),
+                //base64_encode($data['email'])
         ]);
     }
 
-    public function register(Request $request){
+    /*public function register(Request $request){
         $this->validator($request->all())->validate();
         event (new Registered($user = $this->create($request->all())));
         dispatch(new SendVerificationEmail($user));
 
         return view('verification');
+    }*/
+
+    public function register(Request $request)
+    {
+        // Laravel validation
+        $validator = $this->validator($request->all());
+        if ($validator->fails())
+        {
+            $this->throwValidationException($request, $validator);
+        }
+        DB::beginTransaction();
+        try
+        {
+            $user = $this->create($request->all());
+            // After creating the user send an email with the random token generated in the create method above
+            $email = new EmailVerification(new User(['email_token' => $user->email_token, 'name' => $user->name]));
+            Mail::to($user->email)->send($email);
+            DB::commit();
+            //return back();
+            return view ('verification');
+        }
+        catch(Exception $e)
+        {
+            DB::rollback();
+            return back();
+        }
+        return view ('verification');
     }
 
     public function verify($token){
 
-        $user = User::where('email_token',$token)->first();
+        /*$user = User::where('email_token',$token)->first();
         $user->verified = 1;
 
         if($user->save()){
             return view('emailconfirm',['user'=>$user]);
-        }
+        }*/
+
+        User::where('email_token',$token)->firstOrFail()->verified();
+        return redirect('login');
     }
 }
