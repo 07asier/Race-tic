@@ -12,6 +12,10 @@
 | Route::get('/verify/{token}','Auth\RegisterController@verify');
 */
 
+Route::post('/contactoconfirm', function () {
+    return view('email.contactoconfirm');
+});
+
 Route::get('/', function () {
     return view('inicio');
 });
@@ -22,9 +26,6 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
-Route::post('/contactoconfirm', function () {
-    return view('email.contactoconfirm');
-});
 
 Route::post('contact', 'ContactoController@datosContacto');
 
@@ -41,9 +42,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
+
 Route::get('/perfil', function () {
     return view('user/perfil');
 });
+
+Route::post('dato','ChangePasswordController@data');
 
 
 Route::prefix('admin')->group(function() {
