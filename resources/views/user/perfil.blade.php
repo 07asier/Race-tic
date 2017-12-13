@@ -24,24 +24,6 @@
                     <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-default">Cambiar Contraseña</button>
                 </div>
             </div>
-            {{--
-
-                        <form id="formulario" action='dato' method="get">
-
-                            {{ csrf_field() }}
-                            <input type="text" value="a"/>
-                            <button type="button">Example</button>
-                        </form>
-            --}}
-
-                           <a href='dato' onclick="event.preventDefault(); document.getElementById('formulario').submit();" class="btn btn-default">
-                            Cambiar
-                           </a>
-
-                           <form id="formulario" action='dato' method="POST" style="display: none;">
-                               {{ csrf_field() }}
-                           </form>
-
            </div>
        </div>
 
@@ -54,21 +36,20 @@
 
                    <form action="dato" method="post">
                        {{ csrf_field() }}
-                       <p>Contraseña actual</p>
+                       {{-- <p>Contraseña actual</p>
                        <input type="password" name="oldpassword">
-                       <p>Nueva Contraseña</p>
-                       <input type="password" name="newpassowrd">
                        <p>Confirmar Contraseña</p>
                        <input type="password" name="password_confirmation" required>
+                       --}}
+                       <p>Nueva Contraseña</p>
+                       <input type="password" name="newpassowrd">
+                       <p>Nombre</p>
+                       <input type="text" name="name">
+
                        <!--<input type="button" name="login" class="login loginmodal-submit" value="Cambiar">-->
                        <button type="submit" class="btn btn-block login loginmodal-submit">
-                           Enviar</button>
-
+                           Cambiar</button>
                    </form>
-
-                   <div class="login-help">
-                       <a href="#">Register</a> - <a href="#">Forgot Password</a>
-                   </div>
                </div>
            </div>
        </div>

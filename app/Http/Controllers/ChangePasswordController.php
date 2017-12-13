@@ -6,11 +6,9 @@
  * Time: 13:20
  */
 
-
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
-
 
 
 class ChangePasswordController extends Controller
@@ -24,16 +22,35 @@ class ChangePasswordController extends Controller
 
 
 
-        foreach ($users as $user)
-        {
-            echo $user->name;
-            echo $user->id;
+        foreach ($users as $user) {
+            //echo $user->name;
+            //echo $user->id;
+            /*return User::create([
+                'password' => $data['newpassword'],
+
+
+            ]);
+
+            print_r($data->all());*/
+            $name = $request->input("name");
+            echo $name;
+
             DB::table('users')
                 ->where('id', $user->id)
-                ->update(['password' => bcrypt("zubiri1")]);
+                ->update(['password' => bcrypt("$name")]);
+            return back();
         }
 
         //print_r ("aa");
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'password' => 'required|string|min:6',
+
+
+        ]);
     }
 
 
