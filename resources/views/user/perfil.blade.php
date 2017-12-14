@@ -20,9 +20,12 @@
                         <br>
                         <br>
                         <li><i class="glyphicon glyphicon-lock"></i>  Contraseña: *******</li>
+                        <br>
+                        
+                        <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
                     </ul>
-                    <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-default">Cambiar Contraseña</button>
                 </div>
+
             </div>
            </div>
        </div>
@@ -34,24 +37,77 @@
            <div class="modal-dialog">
                <div class="loginmodal-container">
 
-                   <form action="dato" method="post">
+                   <form id="formulario" action="dato" method="post">
                        {{ csrf_field() }}
-                       {{-- <p>Contraseña actual</p>
-                       <input type="password" name="oldpassword">
-                       <p>Confirmar Contraseña</p>
-                       <input type="password" name="password_confirmation" required>
-                       --}}
+                       <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
                        <p>Nueva Contraseña</p>
-                       <input type="password" name="newpassowrd">
-                       <p>Nombre</p>
-                       <input type="text" name="name">
+                       <input type="password" id="pass" name="pass">
+                       <p>Confirmar Contraseña</p>
+                       <input type="password" id="passconf" name="passconf" required>
 
-                       <!--<input type="button" name="login" class="login loginmodal-submit" value="Cambiar">-->
+
                        <button type="submit" class="btn btn-block login loginmodal-submit">
                            Cambiar</button>
+
+
+                       <br>
+                       <div id="errordiv" class="alert alert-danger" hidden>
+                           <strong>Error!</strong> Las contraseñas deben coincidir y tener como mínimo 6 carácteres.
+                       </div>
+
                    </form>
                </div>
            </div>
        </div>
+
+    <script>
+        window.onload = iniciar;
+
+        function iniciar(){
+            var formulario = document.getElementById("formulario");
+            formulario.addEventListener("submit", validar);
+
+        }
+
+        function duracionAlert() {
+            setTimeout(function(){
+                event.preventDefault();
+            }, 3000);
+        }
+
+        function validar(event){
+            var pass = document.getElementById("pass");
+            var passconf = document.getElementById("passconf");
+
+            if(pass.value.length < 6 || pass.value.length < 6){
+
+                console.log("contraseña menor a 6");
+                $("#errordiv").collapse();
+                event.preventDefault();
+
+
+            }else if(pass.value !== passconf.value){
+
+                console.log("las contraseñas no coinciden");
+                $("#errordiv").collapse();
+                event.preventDefault();
+
+            }else{
+                event.preventDefault();
+                swal({
+                    title: 'Buen Trabajo!',
+                    text: 'Contraseña cambiada',
+                    type: 'success',
+                    confirmButtonText: 'OK',
+                })
+
+                $("#login-modal").dismiss();
+                console.log("contraseña cambiada");
+            }
+        }
+        function cerrar(event){
+            $("#login-modal").fadeOut();
+        }
+    </script>
 
    @endsection

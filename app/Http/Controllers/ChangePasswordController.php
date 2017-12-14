@@ -32,7 +32,7 @@ class ChangePasswordController extends Controller
             ]);
 
             print_r($data->all());*/
-            $name = $request->input("name");
+            $name = $request->input("pass");
             echo $name;
 
             DB::table('users')

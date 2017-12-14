@@ -28,6 +28,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
+
+    <!-- SweetAlert -->
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css">
+
     <link href="css/estiloshome.css" rel="stylesheet">
 
 
