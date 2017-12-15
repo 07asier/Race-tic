@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    $oldcontra = new \App\Http\Controllers\ChangePasswordController();
+    $oldp = $oldcontra->getOldPass();
+    ?>
 
     <div class="">
         <div class="well well-sm-6">
@@ -21,6 +25,7 @@
                         <br>
                         <li><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</li>
                         <br>
+                        <p><?php echo $oldp ?> </p>
 
                         <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
                     </ul>
@@ -33,18 +38,21 @@
 
 
 
-       <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
            <div class="modal-dialog">
                <div class="loginmodal-container">
 
                    <form id="formulario" action="dato" method="post">
                        {{ csrf_field() }}
                        <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
+                       <p>Contraseña actual</p>
+                       <input type="password" id="oldpass" name="oldpass">
                        <p>Nueva Contraseña</p>
                        <input type="password" id="pass" name="pass">
                        <p>Confirmar Contraseña</p>
                        <input type="password" id="passconf" name="passconf" required>
-
+                       <p>Contraseña a validar</p>
+                       <input type="text" id="form1" name="form1" value="<?php echo "$oldp" ?> ">
 
                        <button type="submit" class="btn btn-block login loginmodal-submit">
                            Cambiar</button>
@@ -55,6 +63,9 @@
                        <br>
                        <div id="errordiv" class="alert alert-danger" hidden>
                            <strong>Error!</strong> Las contraseñas deben coincidir y tener como mínimo 6 carácteres.
+                       </div>
+                       <div id="errordiv2" class="alert alert-danger" hidden>
+                           <strong>Error!</strong> Contraseña actual errónea
                        </div>
 
                    </form>
@@ -67,9 +78,11 @@
 
         function iniciar(){
             var formulario = document.getElementById("formulario");
+            oldpass.value="";
             formulario.addEventListener("submit", validar);
 
         }
+
 
         function validar(event){
             var pass = document.getElementById("pass");
@@ -97,11 +110,14 @@
                     confirmButtonText: 'OK',
                 })
 
+
+
                 //event.preventDefault();
 
                 /*for(var i=0;i<formulario.length ;i++){
                     formulario[i].value="";
                 }*/
+
 
                 console.log("contraseña cambiada");
             }
