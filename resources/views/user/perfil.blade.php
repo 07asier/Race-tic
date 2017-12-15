@@ -48,6 +48,8 @@
 
                        <button type="submit" class="btn btn-block login loginmodal-submit">
                            Cambiar</button>
+                       <button type="button" onclick="this.form.reset()" class="btn btn-block login loginmodal-submit">
+                           Limpiar</button>
 
 
                        <br>
@@ -69,12 +71,6 @@
 
         }
 
-        function duracionAlert() {
-            setTimeout(function(){
-                event.preventDefault();
-            }, 3000);
-        }
-
         function validar(event){
             var pass = document.getElementById("pass");
             var passconf = document.getElementById("passconf");
@@ -93,7 +89,7 @@
                 event.preventDefault();
 
             }else{
-                event.preventDefault();
+
                 swal({
                     title: 'Buen Trabajo!',
                     text: 'Contraseña cambiada',
@@ -101,13 +97,18 @@
                     confirmButtonText: 'OK',
                 })
 
-                $("#login-modal").dismiss();
+                //event.preventDefault();
+
+                /*for(var i=0;i<formulario.length ;i++){
+                    formulario[i].value="";
+                }*/
+
                 console.log("contraseña cambiada");
             }
         }
-        function cerrar(event){
-            $("#login-modal").fadeOut();
-        }
+
+
+
     </script>
 
    @endsection
