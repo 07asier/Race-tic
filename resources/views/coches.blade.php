@@ -110,7 +110,7 @@
                                 <div class="form-group">
                                     <label for="subject">
                                         Marca</label>
-                                    <select id="subject" name="marca" class="form-control" required="required">
+                                    <select id="subject" name="subject" class="form-control" required="required">
                                         <option value="na" selected="">Escoja uno por favor:</option>
                                         <option value="service">AUDI</option>
                                         <option value="suggestions">BMW</option>
