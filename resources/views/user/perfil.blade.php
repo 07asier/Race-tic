@@ -1,11 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <?php
-    $oldcontra = new \App\Http\Controllers\ChangePasswordController();
-    $oldp = $oldcontra->getOldPass();
-    echo $oldp;
-    ?>
+
 
     <div class="well">
     <div class="tab">
@@ -36,6 +32,7 @@
 
 
 
+
                     <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
                 </ul>
             </div>
@@ -48,6 +45,13 @@
 
     </div>
     </div>
+
+    <?php
+            /*
+    $oldcontra = new \App\Http\Controllers\PerfilController();
+    $oldp = $oldcontra->getOldPass();
+    echo $oldp;*/
+    ?>
 
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
            <div class="modal-dialog">
@@ -64,7 +68,7 @@
 
                        <!--<p>Contraseña a validar</p>
                        <input type="text" id="form1" name="form1" value="">-->
-                       <?php echo "$oldp" ?>
+
 
                        <button type="submit" class="btn btn-block login loginmodal-submit">
                            Cambiar</button>

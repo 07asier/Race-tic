@@ -47,7 +47,7 @@ Route::get('/perfil', function () {
     return view('user/perfil');
 });
 
-Route::post('dato','ChangePasswordController@data');
+Route::post('dato','PerfilController@data');
 
 
 Route::prefix('admin')->group(function() {
@@ -59,6 +59,10 @@ Route::prefix('admin')->group(function() {
     Route::post('/password/email', 'AuthAdmin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
     Route::get('/password/reset/{token}', 'AuthAdmin\ResetPasswordController@showResetForm')->name('admin.password.reset');
     Route::post('/password/reset', 'AuthAdmin\ResetPasswordController@reset');
+});
+
+Route::get('/prueba', function () {
+    return view('email/email');
 });
 
 

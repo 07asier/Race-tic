@@ -9,21 +9,24 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class ChangePasswordController extends Controller
+class PerfilController extends Controller
 {
     private $passok = null;
 
 
     public function data(Request $request){
 
-        $users = DB::table('users')->get();
+
+        $id = Auth::user()->id;
+        $users = DB::table('users')->where('id', $id)->get();
 
         foreach ($users as $user) {
 
             $pass = $request->input("pass");
-            $oldpass = $request->input("oldpass");
+            //$oldpass = $request->input("oldpass");
 
             $hashedPassword = $user->password;
 

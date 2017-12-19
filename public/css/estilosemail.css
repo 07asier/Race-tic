@@ -1,0 +1,58 @@
+.div{
+    font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;
+}
+.tablewidth{
+    width:100%;
+}
+.tdcolor{
+    color:#FFFFFF;
+}
+
+.divinside{
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0;
+    padding: 0;
+    border: 1px solid lightseagreen;
+}
+
+.tableinside{
+    width: 100%;
+    background: #00b6e2 ;
+}
+
+.td{
+    text-align:center;
+    padding:10px;
+}
+
+.imgposition{
+    float:left;
+}
+
+.tabletext{
+    padding: 10px;
+    font-size:14px;
+    width:100%;
+}
+
+.tdtext{
+    padding:10px;
+    font-size:14px;
+    width:100%;
+}
+
+.lastdiv{
+    font-size:12px;
+    margin-top:20px;
+    padding:5px;
+    width:100%;
+    background:#eee;
+    text-align:center;
+}
+.link{
+    color:#333;
+    text-decoration: none;
+}
