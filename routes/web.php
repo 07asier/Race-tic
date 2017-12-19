@@ -28,10 +28,13 @@ Route::get('/contacto', function () {
 
 
 Route::post('contact', 'ContactoController@datosContacto');
-
+//rutas del coche
 Route::get('/coches', function () {
     return view('coches');
 });
+
+Route::post('add','CarsController@add');
+//
 Route::get('/comofunciona', function () {
     return view('comofunciona');
 });
