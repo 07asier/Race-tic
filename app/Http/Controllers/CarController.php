@@ -17,6 +17,17 @@ class CarController extends Controller
     {
     	return view("coches");
     }
+    
+       public function add()
+    {
+    	Feature::create(array(
+            'numserie'=>Input::get('numserie'),
+            'subject'=>Input::get('subject'),
+            'motor'=>Input::get('motor'),
+            'modelo'=>Input::get('modelo'),
+            'message'=>Input::get('message')
+            ));
+    }
 
     /* 
     public function store(Request $request)
