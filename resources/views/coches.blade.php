@@ -95,7 +95,7 @@
         <div class="row well-sm well">
             <div class="col-md-8 "> <!-- col-md-8 -->
                 <div class="">
-                    <form>
+                    <form method="POST" action="save_data" role="form">
                         <div class="row">
 
                             <div class="">
@@ -107,11 +107,6 @@
                                 </span>
                                         <input type="text" class="form-control" id="numserie" placeholder="" required="required" /></div>
                                 </div>
-
-
-
-
-
                                 <div class="form-group">
                                     <label for="subject">
                                         Marca</label>
