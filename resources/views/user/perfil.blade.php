@@ -4,39 +4,50 @@
     <?php
     $oldcontra = new \App\Http\Controllers\ChangePasswordController();
     $oldp = $oldcontra->getOldPass();
+    echo $oldp;
     ?>
 
-    <div class="">
-        <div class="well well-sm-6">
-            <div class="row">
-                <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                    <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
-                </div>
-                <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-                    <div class="container">
-                        <hr class="my-4">
-                        <h2>{{ Auth::user()->name }}</h2>
+    <div class="well">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'datos')" id="defaultOpen">Datos</button>
+        <button class="tablinks" onclick="openTab(event, 'coches')">Coches asociados</button>
 
-                    </div>
-                    <hr>
-                    <ul class="container details">
-                        <li><i class="fa fa-envelope"></i>  Correo Electronico:   {{Auth::user()->email }}</li>
-                        <br>
-                        <br>
-                        <li><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</li>
-                        <br>
-                        <p><?php echo $oldp ?> </p>
+    </div>
 
-                        <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
-                    </ul>
-                </div>
-
+    <div id="datos" class="tabcontent">
+        <h3>Datos</h3>
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
             </div>
-           </div>
-       </div>
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                <div class="container">
+                    <hr class="my-4">
+                    <h2>{{ Auth::user()->name }}</h2>
+
+                </div>
+                <hr>
+                <ul class="container details">
+                    <li><i class="fa fa-envelope"></i>  Correo Electronico:   {{Auth::user()->email }}</li>
+                    <br>
+                    <br>
+                    <li><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</li>
+                    <br>
 
 
 
+                    <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="coches" class="tabcontent">
+        <h3>Coches asociados</h3>
+
+    </div>
+    </div>
 
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
            <div class="modal-dialog">
@@ -45,14 +56,15 @@
                    <form id="formulario" action="dato" method="post">
                        {{ csrf_field() }}
                        <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
-                       <p>Contraseña actual</p>
-                       <input type="password" id="oldpass" name="oldpass">
+
                        <p>Nueva Contraseña</p>
                        <input type="password" id="pass" name="pass">
                        <p>Confirmar Contraseña</p>
                        <input type="password" id="passconf" name="passconf" required>
-                       <p>Contraseña a validar</p>
-                       <input type="text" id="form1" name="form1" value="<?php echo "$oldp" ?> ">
+
+                       <!--<p>Contraseña a validar</p>
+                       <input type="text" id="form1" name="form1" value="">-->
+                       <?php echo "$oldp" ?>
 
                        <button type="submit" class="btn btn-block login loginmodal-submit">
                            Cambiar</button>
@@ -78,13 +90,13 @@
 
         function iniciar(){
             var formulario = document.getElementById("formulario");
-            oldpass.value="";
             formulario.addEventListener("submit", validar);
 
         }
 
 
         function validar(event){
+
             var pass = document.getElementById("pass");
             var passconf = document.getElementById("passconf");
 
@@ -101,30 +113,53 @@
                 $("#errordiv").collapse();
                 event.preventDefault();
 
+
+
             }else{
 
-                swal({
-                    title: 'Buen Trabajo!',
-                    text: 'Contraseña cambiada',
-                    type: 'success',
-                    confirmButtonText: 'OK',
-                })
+                var request = $.ajax({
+                    url:"dato",
+                    type:"post",
+                    data:{pass:pass.value}
+                });
 
+                request.done(function(response){
 
+                    swal({
+                        title: 'Buen Trabajo!',
+                        text: 'Contraseña cambiada',
+                        type: 'success',
+                        confirmButtonText: 'OK',
+                    })
 
-                //event.preventDefault();
-
-                /*for(var i=0;i<formulario.length ;i++){
-                    formulario[i].value="";
-                }*/
-
-
+                });
                 console.log("contraseña cambiada");
             }
         }
 
 
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+
+        document.getElementById("defaultOpen").click();
+
+
 
     </script>
+
+
+
 
    @endsection

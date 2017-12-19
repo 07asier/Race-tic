@@ -112,8 +112,14 @@
             }
         }
         if(camposcorrectos){
-            $("#modala").collapse();
+            //$("#modala").collapse();
 
+            swal({
+                title: 'Buen Trabajo!',
+                text: 'Contraseña cambiada',
+                type: 'success',
+                confirmButtonText: 'OK',
+            })
         }
     }
 

@@ -27,21 +27,21 @@ class ChangePasswordController extends Controller
 
             $hashedPassword = $user->password;
 
-            if (Hash::check($oldpass, $hashedPassword))
-            {
-                //print_r("ok");
-
+            // (Hash::check($oldpass, $hashedPassword)) {
                 //$this-> $passok = $oldpass;
-                $this->setOldPass($oldpass);
-                print_r($this->setOldPass($oldpass));
+                //$this->setOldPass($oldpass);
+                //print_r($this->setOldPass($oldpass));
+                //print_r($oldpass);
+
 
                 DB::table('users')
                     ->where('id', $user->id)
                     ->update(['password' => bcrypt("$pass")]);
-                //return back();
-            }else{
-               print_r("error");
-            }
+                return back();
+            //}else{
+
+               //return back();
+            //}
         }
     }
 
@@ -50,14 +50,10 @@ class ChangePasswordController extends Controller
     }
 
     public function getOldPass(){
-
         return $this->passok;
     }
 
-    /*public function __toString()
-    {
-        return $this->$passok;
-    }*/
+
 
 
     protected function validator(array $data)
