@@ -105,7 +105,7 @@
                                     <div class="input-group">
                                 <span class="">
                                 </span>
-                                        <input type="text" class="form-control" id="numserie" placeholder="" required="required" /></div>
+                                        <input type="text" class="form-control" id="numserie" name="numserie" placeholder="" required="required" /></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="subject">
@@ -129,7 +129,7 @@
                                 <div class="input-group">
                                 <span class="">
                                 </span>
-                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
+                                    <input type="text" class="form-control" id="motor" name="motor" placeholder="" required="required" /></div>
                             </div>
 
                             <div class="form-group">
@@ -138,13 +138,13 @@
                                 <div class="input-group">
                                 <span class="">
                                 </span>
-                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
+                                    <input type="text" class="form-control" id="modelo" name="modelo" placeholder="" required="required" /></div>
                             </div>
 
 
                             <div class="">
                                 <div class="form-group">
-                                    <label for="name">
+                                    <label for="message">
                                         Mensaje</label>
                                     <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
                                               placeholder="Mensaje"></textarea>
