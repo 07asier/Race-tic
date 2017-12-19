@@ -33,7 +33,7 @@ Route::get('/coches', function () {
     return view('coches');
 });
 
-Route::post('add','CarsController@add');
+Route::post('add','CarController@add');
 //
 Route::get('/comofunciona', function () {
     return view('comofunciona');
