@@ -28,15 +28,12 @@ class ContactoController extends Controller{
             'email'=>"required|string",
             'mensaje'=>"required|string"
         ]);
-
         */
         $this->validator($request->all())->validate();
 
         DB::beginTransaction();
-
         try
         {
-
             $contactinfo = $this->create($request->all());
 
             $email = new ContactoEmail(new Contacto([ 'name' => $contactinfo->name , 'email' => $contactinfo->email]));

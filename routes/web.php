@@ -64,5 +64,15 @@ Route::prefix('admin')->group(function() {
 Route::get('/prueba', function () {
     return view('email/email');
 });
+/*
+Route::group(['middleware' => ['auth', 'usuario']], function() {
+
+    Route::get('/coches', function () {
+        return view('coches');
+    });
+
+    Route::post('add','CocheController@add');
+});*/
 
 
+Route::post('add','CocheController@add');

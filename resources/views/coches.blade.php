@@ -20,7 +20,7 @@
                             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="loginmodal-container">
-                                        <form id="formulario">
+                                        <form id="formulario" action="add" method="post">
                                             {{ csrf_field() }}
                                             <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
 
@@ -31,20 +31,20 @@
                                                     <div class="input-group">
                                                     <span class="">
                                                     </span>
-                                                        <input type="text" class="form-control" id="numserie" placeholder="" required="required" /></div>
+                                                        <input type="text" class="form-control" name="numserie" id="numserie" placeholder="" required="required" /></div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="subject">
                                                         Marca</label>
-                                                    <select id="subject" name="marca" class="form-control" required="required">
+                                                    <select id="subject" name="subject" class="form-control" required="required">
                                                         <option value="na" selected="">Escoja uno por favor:</option>
-                                                        <option value="service">AUDI</option>
-                                                        <option value="suggestions">BMW</option>
-                                                        <option value="product">NISSAN</option>
-                                                        <option value="product">TOYOTA</option>
-                                                        <option value="product">HONDA</option>
-                                                        <option value="product">FORD</option>
+                                                        <option>AUDI</option>
+                                                        <option>BMW</option>
+                                                        <option>NISSAN</option>
+                                                        <option>TOYOTA</option>
+                                                        <option>HONDA</option>
+                                                        <option>FORD</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -56,7 +56,7 @@
                                                 <div class="input-group">
                                                 <span class="">
                                                 </span>
-                                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
+                                                    <input type="text" class="form-control" name="motor" id="motor" placeholder="" required="required" /></div>
                                             </div>
 
                                             <div class="form-group">
@@ -65,7 +65,7 @@
                                                 <div class="input-group">
                                                     <span class="">
                                                     </span>
-                                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
+                                                    <input type="text" class="form-control" name="modelo" id="modelo" placeholder="" required="required" /></div>
                                             </div>
 
                                             <div class="">
