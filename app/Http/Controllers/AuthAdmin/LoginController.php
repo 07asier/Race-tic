@@ -58,6 +58,7 @@ class LoginController extends Controller
         }
         // If Unsuccessful, then redirect back to the login with the form data
         return redirect()->back()->withInput($request->only('email', 'remember'));
+
     }
     /**
      * Log the user out of the application.

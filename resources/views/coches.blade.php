@@ -2,13 +2,104 @@
 
 @section('content')
 
-    <script type="text/javascript">
+    <div class="container">
+        <div class="row">
+            <h3></h3>
+        </div>
+    </div>
 
+    <div class="container ">
+        <div class="row well-sm well">
+            <div class="col-md-8 "> <!-- col-md-8 -->
+                <div class="">
+                        <div class="row">
+                            <h3>Coches añadidos</h3>
+
+                            <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Añadir</button>
+
+                            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="loginmodal-container">
+                                        <form id="formulario">
+                                            {{ csrf_field() }}
+                                            <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
+
+                                            <div class="">
+                                                <div class="form-group">
+                                                    <label for="numserie">
+                                                        Numero de serie</label>
+                                                    <div class="input-group">
+                                                    <span class="">
+                                                    </span>
+                                                        <input type="text" class="form-control" id="numserie" placeholder="" required="required" /></div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="subject">
+                                                        Marca</label>
+                                                    <select id="subject" name="marca" class="form-control" required="required">
+                                                        <option value="na" selected="">Escoja uno por favor:</option>
+                                                        <option value="service">AUDI</option>
+                                                        <option value="suggestions">BMW</option>
+                                                        <option value="product">NISSAN</option>
+                                                        <option value="product">TOYOTA</option>
+                                                        <option value="product">HONDA</option>
+                                                        <option value="product">FORD</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="motor">
+                                                    Motorizacion</label>
+                                                <div class="input-group">
+                                                <span class="">
+                                                </span>
+                                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="modelo">
+                                                    Modelo</label>
+                                                <div class="input-group">
+                                                    <span class="">
+                                                    </span>
+                                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
+                                            </div>
+
+                                            <div class="">
+                                                <div class="form-group">
+                                                    <label for="name">
+                                                        Mensaje</label>
+                                                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                                              placeholder="Mensaje"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-block login loginmodal-submit">
+                                                Añadir</button>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+/*
         window.onload = init;
 
         // asocia los eventos necesarios
         function init() {
-            let formulario = document.getElementById("formulario");
+            var formulario = document.getElementById("formulario");
             formulario.addEventListener("submit", validar);
             formulario.elements["problema"].addEventListener("keypress", longitudMax);
         }
@@ -23,9 +114,9 @@
 
         // comprueba si el formulario está rellenado correctamente
         function validar(event){
-            let formulario = document.getElementById("formulario");
-            for (let i=0;i<formulario.elements.length;i++){
-                let elemento = formulario.elements[i];
+            var formulario = document.getElementById("formulario");
+            for (var i=0;i<formulario.elements.length;i++){
+                var elemento = formulario.elements[i];
                 if(esIncorrecto(elemento)){
                     elemento.className = "error";
                     event.preventDefault();
@@ -59,114 +150,8 @@
             }
         }
 
-        // comprueba si el campo cumple los requisitos de un número de telefono
-        function telefonoIncorrecto(campo){
-            if (campo.value.length < 9 || isNaN(campo.value)){
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-
-        // comprueba si el campo cumple los requisitos de un email válido
-        function emailIncorrecto(campo){
-            if (  campo.value.indexOf("@") < 0 ||
-                (campo.value.indexOf("@") > campo.value.lastIndexOf(".") )
-            ){
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-
+*/
     </script>
-
-
-
-    <div class="container">
-        <div class="row">
-            <h3>Añade tu coche</h3>
-        </div>
-    </div>
-
-    <div class="container ">
-        <div class="row well-sm well">
-            <div class="col-md-8 "> <!-- col-md-8 -->
-                <div class="">
-                    <form>
-                        <div class="row">
-
-                            <div class="">
-                                <div class="form-group">
-                                    <label for="numserie">
-                                        Numero de serie</label>
-                                    <div class="input-group">
-                                <span class="">
-                                </span>
-                                        <input type="text" class="form-control" id="numserie" placeholder="" required="required" /></div>
-                                </div>
-
-
-
-
-
-                                <div class="form-group">
-                                    <label for="subject">
-                                        Marca</label>
-                                    <select id="subject" name="marca" class="form-control" required="required">
-                                        <option value="na" selected="">Escoja uno por favor:</option>
-                                        <option value="service">AUDI</option>
-                                        <option value="suggestions">BMW</option>
-                                        <option value="product">NISSAN</option>
-                                        <option value="product">TOYOTA</option>
-                                        <option value="product">HONDA</option>
-                                        <option value="product">FORD</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="motor">
-                                    Motorizacion</label>
-                                <div class="input-group">
-                                <span class="">
-                                </span>
-                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="modelo">
-                                    Modelo</label>
-                                <div class="input-group">
-                                <span class="">
-                                </span>
-                                    <input type="text" class="form-control" id="motor" placeholder="" required="required" /></div>
-                            </div>
-
-
-                            <div class="">
-                                <div class="form-group">
-                                    <label for="name">
-                                        Mensaje</label>
-                                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                              placeholder="Mensaje"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                                    Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 
 

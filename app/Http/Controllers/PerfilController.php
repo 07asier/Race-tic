@@ -12,6 +12,8 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
+
 class PerfilController extends Controller
 {
     private $passok = null;
