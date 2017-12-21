@@ -18,7 +18,7 @@
                                         <tr>
                                             <td rowspan="2" class="td">
                                                 <img class="imgposition"  src="../images/racetic.png" />
-                                               {{--  {{url('/verifyemail',$email_token)}}--}}
+                                                 {{url('/verifyemail',$email_token)}}
 
                                             </td>
                                         </tr>

@@ -13,9 +13,22 @@
             <div class="col-md-8 "> <!-- col-md-8 -->
                 <div class="">
                         <div class="row">
+                            <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Añadir</button>
                             <h3>Coches añadidos</h3>
 
-                            <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Añadir</button>
+
+
+                             @foreach($coches as $key => $data)
+                                <ul class="list-group">
+                                    <li class="list-group-item"> {{ $data->marca }} {{ $data->modelo }}</li><br></br>
+
+                                </ul>
+                            @endforeach
+
+
+
+
+
 
                             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">

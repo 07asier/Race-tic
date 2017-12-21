@@ -101,6 +101,8 @@
 
         function validar(event){
 
+            event.preventDefault();
+
             var pass = document.getElementById("pass");
             var passconf = document.getElementById("passconf");
 
@@ -108,23 +110,24 @@
 
                 console.log("contraseña menor a 6");
                 $("#errordiv").collapse();
-                event.preventDefault();
 
 
             }else if(pass.value !== passconf.value){
 
                 console.log("las contraseñas no coinciden");
                 $("#errordiv").collapse();
-                event.preventDefault();
 
 
 
             }else{
 
+                var datosForm = $(this).serialize();
+
                 var request = $.ajax({
+                    dataType : "text",
                     url:"dato",
                     type:"post",
-                    data:{pass:pass.value}
+                    data:datosForm
                 });
 
                 request.done(function(response){
@@ -134,10 +137,18 @@
                         text: 'Contraseña cambiada',
                         type: 'success',
                         confirmButtonText: 'OK',
-                    })
+                    });
 
                 });
+
                 console.log("contraseña cambiada");
+
+                var formulario = document.getElementById("formulario");
+                for(var i=0 ; i< formulario.length; i++)
+                {
+                    formulario[i].value = "";
+                }
+
             }
         }
 

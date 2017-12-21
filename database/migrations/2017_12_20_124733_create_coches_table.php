@@ -14,7 +14,6 @@ class CreateCochesTable extends Migration
     public function up()
     {
         Schema::create('coches', function (Blueprint $table) {
-
             $table->integer('num_serie');
             $table->string('marca');
             $table->string('motor');

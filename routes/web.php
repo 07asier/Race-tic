@@ -30,8 +30,24 @@ Route::get('/contacto', function () {
 Route::post('contact', 'ContactoController@datosContacto');
 
 Route::get('/coches', function () {
-    return view('coches');
+    $id = Auth::user()->id;
+    $coches = DB::table('coches')->get();
+    //return View::make('coches')->with('coches', $coches);
+    return view('coches', ['coches' => $coches]);
+
+    //return view('coches');
 });
+
+/*
+
+Route::get('/adminEditarUsuario/{id}', function (){
+    $usuarios = DB::table('users')->get();
+    return view('editarUsuarios', ['usuarios' => $usuarios]);
+});
+ */
+
+Route::post('add','CocheController@add');
+
 Route::get('/comofunciona', function () {
     return view('comofunciona');
 });
@@ -64,15 +80,4 @@ Route::prefix('admin')->group(function() {
 Route::get('/prueba', function () {
     return view('email/email');
 });
-/*
-Route::group(['middleware' => ['auth', 'usuario']], function() {
 
-    Route::get('/coches', function () {
-        return view('coches');
-    });
-
-    Route::post('add','CocheController@add');
-});*/
-
-
-Route::post('add','CocheController@add');
