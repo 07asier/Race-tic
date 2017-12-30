@@ -14,6 +14,9 @@ class CreateCochesTable extends Migration
     public function up()
     {
         Schema::create('coches', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');;
+
             $table->integer('num_serie');
             $table->string('marca');
             $table->string('motor');
@@ -31,6 +34,9 @@ class CreateCochesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coches');
+        Schema::table('coches', function (Blueprint $table) {
+            $table->dropForeign('coches_user_id_foreign');
+        });
+
     }
 }
