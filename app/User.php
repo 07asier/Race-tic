@@ -34,4 +34,10 @@ class User extends Authenticatable
         $this->email_token = null;
         $this->save();
     }
+
+    public function coches()
+    {
+        return $this->hasMany('App\Coches');
+    }
+
 }

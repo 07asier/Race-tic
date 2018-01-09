@@ -16,7 +16,10 @@
                             <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Añadir</button>
                             <h3>Coches añadidos</h3>
 
+                            <?php $id = Auth::user()->id;
+                                  $coches = DB::table('users_coche')->where('serie_id', $id)->get();
 
+                            ?>
 
                              @foreach($coches as $key => $data)
                                 <ul class="list-group">

@@ -30,12 +30,12 @@ Route::get('/contacto', function () {
 Route::post('contact', 'ContactoController@datosContacto');
 
 Route::get('/coches', function () {
-    $id = Auth::user()->id;
-    $coches = DB::table('coches')->get();
+    //$id = Auth::user()->id;
+    //$coches = DB::table('users_coche')->where('user_id', $id)->get();
     //return View::make('coches')->with('coches', $coches);
-    return view('coches', ['coches' => $coches]);
+    //return view('coches', ['coches' => $coches]);
 
-    //return view('coches');
+    return view('coches');
 });
 
 /*
