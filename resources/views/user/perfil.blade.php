@@ -98,7 +98,6 @@
 
         }
 
-
         function validar(event){
 
             event.preventDefault();
