@@ -43,6 +43,7 @@ class PerfilController extends Controller
                     ->where('id', $user->id)
                     ->update(['password' => bcrypt("$pass")]);
                 return back();
+
             //}else{
 
                //return back();

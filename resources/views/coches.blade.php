@@ -17,17 +17,16 @@
                             <h3>Coches añadidos</h3>
 
                             <?php $id = Auth::user()->id;
-                                  $coches = DB::table('users_coche')->where('serie_id', $id)->get();
+                                  $coches = DB::table('coches')->where("user_id",$id)->get();
 
                             ?>
 
-                             @foreach($coches as $key => $data)
+                              @foreach($coches as $key => $data)
                                 <ul class="list-group">
                                     <li class="list-group-item"> {{ $data->marca }} {{ $data->modelo }}</li><br></br>
 
                                 </ul>
                             @endforeach
-
 
 
 

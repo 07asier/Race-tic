@@ -15,8 +15,9 @@ class CreateCochesTable extends Migration
     {
         Schema::create('coches', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->unsignedInteger('num_serie');
+            $table->integer('num_serie')->unique();
             $table->primary('num_serie');
+            $table->integer('user_id')->unsigned();
             $table->string('marca');
             $table->string('motor');
             $table->string('modelo');
@@ -25,10 +26,10 @@ class CreateCochesTable extends Migration
             $table->timestamps();
         });
 
-
-
+        Schema::table('coches',function(Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+        });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -36,7 +37,9 @@ class CreateCochesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coches');
-
+        //Schema::dropIfExists('coches');
+        Schema::table('coches', function (Blueprint $table) {
+            $table->dropForeign('coches_user_id_foreign');
+        });
     }
 }
