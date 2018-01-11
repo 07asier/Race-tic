@@ -28,8 +28,8 @@ Route::get('/contacto', function () {
 
 
 Route::post('contact', 'ContactoController@datosContacto');
-
-Route::get('/coches', function () {
+//Middleware a coches añadido
+Route::get('/coches',['middleware'=>'auth', function () {
     return view('coches');
 });
 
@@ -53,8 +53,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
-
-Route::get('/perfil', function () {
+//Middleware a Perfil añadido
+Route::get('/perfil',['middleware'=>'auth',  function () {
     return view('user/perfil');
 });
 
