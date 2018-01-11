@@ -18,7 +18,6 @@
 
                             <?php $id = Auth::user()->id;
                                   $coches = DB::table('coches')->where("user_id",$id)->get();
-
                             ?>
 
                               @foreach($coches as $key => $data)
@@ -38,7 +37,11 @@
                                                     <h4 class="title">
                                                         {{$data->marca}}
                                                         <span class="pull-right pagado">Apagado</span>
-                                                        <p><span class="glyphicon glyphicon-plus pull-right"></span></p>
+                                                        <br>
+                                                        <button data-id="{{$data->num_serie}}"  data-toggle="modal" data-target="#info-modal" class="info-modal material-button material-button-toggle pull-right" type="button">
+                                                            <span class="fa fa-plus" aria-hidden="true"></span>
+                                                        </button>
+
                                                     </h4>
                                                     <p class="summary"> Modelo:{{$data->modelo}}</p>
                                                     <p class="summary"> Motorización:{{$data->motor}}</p>
@@ -49,7 +52,26 @@
                                     </tbody>
                                 </table>
                             </div>
+
+
+                            <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="loginmodal-container">
+                                        <p id="n_serie"></p>
+
+                                    </div>
+                                </div>
+                            </div>
                             @endforeach
+
+                            <script>
+                                $(document).on("click", ".info-modal", function () {
+                                    var numero_serie = $(this).data('id');
+                                    $("#n_serie").text("Numero de serie:"+ numero_serie );
+
+                                });
+                            </script>
+
 
 
                             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -131,12 +153,14 @@
     </div>
 
 
+
     <script type="text/javascript">
 
-        window.onload = iniciar;
+        //window.onload = iniciar;
+        $(document).ready = iniciar;
 
         function iniciar(){
-            var formulario = document.getElementById("formulario");
+            var formulario = $("#formulario");
             formulario.addEventListener("submit", validar);
 
         }
@@ -144,7 +168,6 @@
         function validar(event){
 
             event.preventDefault();
-
 
             var numserie = $("#numserie");
             var marca = $("#subject");
@@ -181,7 +204,7 @@
 
                 console.log("coche añadido");
 
-                var formulario = document.getElementById("#formulario");
+                var formulario = $("#formulario");
                 for(var i=0 ; i< formulario.length; i++)
                 {
                     formulario[i].value = "";
@@ -190,69 +213,6 @@
             }
         }
 
-
-
-
-
-
-
-        /*
-                window.onload = init;
-
-                // asocia los eventos necesarios
-                function init() {
-                    var formulario = document.getElementById("formulario");
-                    formulario.addEventListener("submit", validar);
-                    formulario.elements["problema"].addEventListener("keypress", longitudMax);
-                }
-
-                // previene escribir más caracteres de los permitidos en el campo "problema"
-                function longitudMax(event){
-                    if (this.value.length === 100){
-                        alert("El tamaño máximo del campo es 100.");
-                        event.preventDefault();
-                    }
-                }
-
-                // comprueba si el formulario está rellenado correctamente
-                function validar(event){
-                    var formulario = document.getElementById("formulario");
-                    for (var i=0;i<formulario.elements.length;i++){
-                        var elemento = formulario.elements[i];
-                        if(esIncorrecto(elemento)){
-                            elemento.className = "error";
-                            event.preventDefault();
-                        }
-                        else {
-                            elemento.className = "correcto";
-                        }
-                    }
-                }
-
-                // dice si el campo es incorrecto en funcion del tipo de campo
-                function esIncorrecto(elemento){
-                    if(elemento.name === "numserie" || elemento.name === "marca" || elemento.name === "motor"){
-                        return estaVacio(elemento);
-                    }
-                    else if (elemento.name === "modelo"){
-                        return telefonoIncorrecto(elemento);
-                    }
-                    else if (elemento.name === "mensaje"){
-                        return emailIncorrecto(elemento);
-                    }
-                }
-
-                // comprueba si el campo está vacío
-                function estaVacio(campo){
-                    if (campo.value.length === 0) {
-                        return true;
-                    }
-                    else {
-                        return false;
-                    }
-                }
-
-        */
     </script>
 
 
