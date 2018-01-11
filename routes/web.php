@@ -31,7 +31,7 @@ Route::post('contact', 'ContactoController@datosContacto');
 //Middleware a coches añadido
 Route::get('/coches',['middleware'=>'auth', function () {
     return view('coches');
-});
+}]);
 
 /*
 
@@ -56,7 +56,7 @@ Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 //Middleware a Perfil añadido
 Route::get('/perfil',['middleware'=>'auth',  function () {
     return view('user/perfil');
-});
+}]);
 
 Route::post('dato','PerfilController@data');
 

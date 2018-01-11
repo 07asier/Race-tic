@@ -38,7 +38,7 @@
                                                         {{$data->marca}}
                                                         <span class="pull-right pagado">Apagado</span>
                                                         <br>
-                                                        <button data-id="{{$data->num_serie}}"  data-toggle="modal" data-target="#info-modal" class="info-modal material-button material-button-toggle pull-right" type="button">
+                                                        <button  data-stuff="{{$data->num_serie}}" data  data-toggle="modal" data-target="#info-modal" class="info-modal material-button material-button-toggle pull-right" type="button">
                                                             <span class="fa fa-plus" aria-hidden="true"></span>
                                                         </button>
 
@@ -57,6 +57,7 @@
                             <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="loginmodal-container">
+                                        <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
                                         <p id="n_serie"></p>
 
                                     </div>
@@ -66,8 +67,9 @@
 
                             <script>
                                 $(document).on("click", ".info-modal", function () {
-                                    var numero_serie = $(this).data('id');
-                                    $("#n_serie").text("Numero de serie:"+ numero_serie );
+                                    var numero_serie = $(this).data('stuff');
+                                    $("#n_serie").text("Numero de serie:"+ numero_serie + " Mensaje:");
+
 
                                 });
                             </script>
