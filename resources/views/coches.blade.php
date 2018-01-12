@@ -158,11 +158,11 @@
 
     <script type="text/javascript">
 
-        //window.onload = iniciar;
-        $(document).ready = iniciar;
+        window.onload = iniciar;
+        //$(document).ready = iniciar;
 
         function iniciar(){
-            var formulario = $("#formulario");
+            var formulario = document.getElementById("formulario");
             formulario.addEventListener("submit", validar);
 
         }
@@ -172,7 +172,7 @@
             event.preventDefault();
 
             var numserie = $("#numserie");
-            var marca = $("#subject");
+            var marca = ("#subject");
             var motor = $("#motor");
             var modelo = $("#modelo");
 
@@ -206,7 +206,7 @@
 
                 console.log("coche añadido");
 
-                var formulario = $("#formulario");
+                var formulario = document.getElementById("formulario");
                 for(var i=0 ; i< formulario.length; i++)
                 {
                     formulario[i].value = "";
