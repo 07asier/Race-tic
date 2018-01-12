@@ -34,7 +34,14 @@
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css">
 
     <link href="css/estiloshome.css" rel="stylesheet">
+    <!-- estilos del google maps -->
+    <style type="text/css">
 
+        #maps{
+            margin-left: 35%;
+        }
+
+    </style>
 
 
 </head>
