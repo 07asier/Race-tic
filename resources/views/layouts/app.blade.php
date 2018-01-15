@@ -241,8 +241,9 @@
                 <div class="post">
                     <p>Premio a la empresa más innovadora <span>Agosto 3,2017</span></p>
                     <p>Premio a la empresa más joven <span>Agosto 3,2017</span></p>
-
                 </div>
+
+
             </div>
             <div class="col-md-3 col-sm-6 footer-col">
                 <h6 class="heading7">Mantente informado</h6>
@@ -261,7 +262,7 @@
 <div class="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p>© 2017 - All Rights Reserved</p>
+            <p>© 2018 - All Rights Reserved</p>
         </div>
 
     </div>

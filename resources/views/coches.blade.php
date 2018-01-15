@@ -30,7 +30,7 @@
                                         <td>
                                             <div class="media">
                                                 <a href="#" class="pull-left">
-                                                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                                                    <img src="https://img0.gaadicdn.com/images/car-images/235x97/Audi/Audi-A4/047.jpg"  class="media-photo">
                                                 </a>
                                                 <div class="media-body">
 
@@ -68,7 +68,7 @@
                             <script>
                                 $(document).on("click", ".info-modal", function () {
                                     var numero_serie = $(this).data('stuff');
-                                    $("#n_serie").text("Numero de serie:"+ numero_serie + " Mensaje:");
+                                    $("#n_serie").text("Numero de serie:"+ numero_serie + " Mensaje:" + "Fecha creacion:");
 
 
                                 });
@@ -82,6 +82,10 @@
                                         <form id="formulario" action="add" method="post">
                                             {{ csrf_field() }}
                                             <button type="button" aria-label="Close" class="btn pull-right" data-dismiss="modal" ><span aria-hidden="true">&times;</span> </button>
+
+                                            <div id="errordiv" class="alert alert-danger" hidden>
+                                                <strong>Error!</strong>Rellena los campos.
+                                            </div>
 
                                             <div class="">
                                                 <div class="form-group">
@@ -138,10 +142,10 @@
 
                                             <button type="submit" class="btn btn-block login loginmodal-submit">
                                                 Añadir</button>
+                                            <button type="button"  onclick="this.form.reset()"  class="btn btn-block login loginmodal-submit">
+                                                Limpiar</button>
                                             <br>
-                                            <div id="errordiv" class="alert alert-danger" hidden>
-                                                <strong>Error!</strong>Rellena los campos.
-                                            </div>
+
                                         </form>
 
                                     </div>

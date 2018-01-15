@@ -24,7 +24,7 @@ class PerfilController extends Controller
 
         $id = Auth::user()->id;
         $users = DB::table('users')->where('id', $id)->get();
-
+        //for para cada usuario
         foreach ($users as $user) {
 
             $pass = $request->input("pass");
