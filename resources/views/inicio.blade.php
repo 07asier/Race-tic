@@ -61,7 +61,7 @@
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box mt-5 mx-auto">
                     <img src="images/icons/easy.png"> </img>
-                    <h3>Accesibile</h3>
+                    <h3>Accesible</h3>
                     <p class="text-muted mb-0">Fácil acceso a los datos</p>
                 </div>
             </div>
@@ -76,7 +76,7 @@
             <div>
                 <hr class="my-4">
                 <h3 class="text-center">Quiénes somos</h3>
-                <p class="">Somos una pequeña empresa del ámbito automovilistico, que analizamos a tiempo real(a través de WiFi 4G) los datos de un coche.Mediante un dispositivo llamado <a href="https://es.wikipedia.org/wiki/OBD">OBD-II </a> el cual se puede conectar al vehiculo y se encarga de almacenar los datos en la <a href="https://es.wikipedia.org/wiki/Computaci%C3%B3n_en_la_nube" >nube</a>, y luego los plasmamos en ésta aplicación web. Es un servicio rápido, fiable y sobre todo sencillo de usar. Ofrecemos la opción de añadir más de un vehiculo a la aplicación y simple interfaz para gestionar tu perfil facil de usar. </p>
+                <p class="">Somos una pequeña empresa del ámbito automovilistico, que analizamos a tiempo real(a través de WiFi 4G) los datos de un coche.Mediante un dispositivo llamado <a href="https://es.wikipedia.org/wiki/OBD">OBD-II </a> el cual se puede conectar al vehiculo y se encarga de almacenar los datos en la <a href="https://es.wikipedia.org/wiki/Computaci%C3%B3n_en_la_nube" >nube</a>,  luego los plasmamos en ésta aplicación web. Es un servicio rápido, fiable y sobre todo sencillo de usar. Ofrecemos la opción de añadir más de un vehiculo a la aplicación y una simple interfaz para gestionar tu perfil. </p>
                 <hr class="my-4">
                 <h3 class="text-center">Cómo funciona</h3>
 
@@ -114,24 +114,24 @@
                                 <div class="tab-pane active " id="portlet_tab1">
 
                                     <p>Antes de nada, deberemos adquirir nuestro dispositivo OBD-II. Una vez adquirido, abriremos la caja y encontraremos el dispositivo que tendremos que enchufar al coche.Será parecido a la siguiente imagen:</p>
-                                    <img src="images/obd.png" class="imgmitad" width="250" height="150">
+                                    <img src="images/obd.png" class="imgmitad" width="29%" height="29%">
                                 </div>
                                 <div class="tab-pane" id="portlet_tab2">
 
                                     <p>Abrimos enchufamos el OBD en la ranura del coche. La ranura se encuentra debajo del volante.Si no encuentras dónde está la ranura busca aqui:<a href="https://blog.reparacion-vehiculos.es/conector-obd-coche"> ¿Dónde está mi ranura?</a> </p>
-                                    <img src="images/obd2.jpg" class="imgmitad" width="250" height="150">
+                                    <img src="images/obd2.jpg" class="imgmitad" width="35%" height="35%">
                                     <br>
                                 </div>
                                 <div class="tab-pane" id="portlet_tab3">
 
                                     <p>Abrimos la aplicación web, insertamos nuestro coche en la seccion <a href="coches">coches</a> ,(una vez loggeado) introduciendo el numero de serie del OBD correspondiente, la marca del vehículo, el modelo etc ...</p>
-                                    <img src="images/vistacoches.png" class="imgmitad" width="250" height="130">
-                                    <br>
+                                    <img src="images/vistacoches.png" class="imgmitad" width="45%" height="45%">
+
                                 </div>
                                 <div class="tab-pane" id="portlet_tab4">
 
                                     <p>Tutorial finalizado, ¡ ahora sólo debes usar el coche y disfrutar de todas las funciones que ofrecemos !</p>
-                                    <img src="images/monigote.png" class="imgmitad" width="250" height="170">
+                                    <img src="images/monigote.png" class="imgmitad" width="22%" height="22%">
                                 </div>
                             </div>
                         </div>
