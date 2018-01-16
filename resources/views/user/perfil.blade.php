@@ -6,7 +6,7 @@
     <div class="well">
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'datos')" id="defaultOpen">Datos</button>
-        <button class="tablinks" onclick="openTab(event, 'coches')">Coches asociados</button>
+        <!--<button class="tablinks" onclick="openTab(event, 'coches')">Coches asociados</button>-->
 
     </div>
 

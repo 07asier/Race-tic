@@ -34,71 +34,11 @@
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css">
 
     <link href="css/estiloshome.css" rel="stylesheet">
-    <!-- estilos del google maps -->
-    <style type="text/css">
-
-        #maps{
-            margin-left: 35%;
-        }
-
-    </style>
 
 
 </head>
 
-<body >
-
-<!-- Navigation -->
-
-{{--
-<nav class="navbar-inverse" id="navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="inicio" id="titulo">Race-tic</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="coches" id="menus">Coches</a></li>
-                <li><a href="contacto" id="menus">Contacto</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-
-
-
-                @guest
-                    <li><a href="register" id="menus"><span class="glyphicon glyphicon-user color"></span> Registrarse</a></li>
-                    <li><a href="login" id="menus"><span class="glyphicon glyphicon-log-in color"></span> Iniciar sesión</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                        @endguest
-            </ul>
-        </div>
-    </div>
-</nav>
---}}
+<body>
 
 <nav class="navbar-inverse">
     <div class="container-fluid" id="navbar">
@@ -118,7 +58,7 @@
                 @else
                         <li><a href="coches" id="menus">Coches</a></li>
                         <li><a href="contacto" id="menus">Contacto</a></li>
-                        <li><a href="comofunciona" id="menus">Cómo funciona</a></li>
+
                 @endguest
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -181,38 +121,6 @@
                             </ul>
                         </li>
                     </ul>
-
-
-                    {{--
-                        <li class="dropdown">
-
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" >
-                                <li>
-                                     <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Salir
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-
-                                </li>
-
-                                 <li class="divider"></li>
-                                <li>
-                                   <a href="perfil">Mi Perfil</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        --}}
-
-
                         @endguest
             </ul>
         </div>

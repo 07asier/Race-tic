@@ -76,3 +76,13 @@ Route::get('/prueba', function () {
     return view('email/email');
 });
 
+/*
+Route::get('/adminVerUsuarios','GestionarUsuariosController@ver');
+
+Route::get('/adminEliminarUsuario/{id}', 'GestionarUsuariosController@eliminar');
+
+Route::get('/adminEditarUsuario/{id}', 'GestionarUsuariosController@editar');
+
+Route::put ('/adminActualizarUsuario/{id}','GestionarUsuariosController@update');
+*/
+

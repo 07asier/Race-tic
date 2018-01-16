@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /* Estilos para el MENU*/
 .menu {
     list-style-type: none;
@@ -97,12 +99,12 @@ header.masthead {
 }
 
 h1{
-    font-family: 'Vollkorn SC', serif;
+    font-family: 'Montserrat', sans-serif;
     color : white
 }
 
-h2,h3,h4{
-    font-family: 'Vollkorn SC', serif;
+h2,h3,h4,p,label{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .parallax {

@@ -97,6 +97,9 @@
     }*/
 
     function validar(event){
+
+        event.preventDefault();
+
         var formulario = document.getElementById("formulario");
         var camposcorrectos = true;
         for (var i=0;i<formulario.elements.length;i++){
@@ -114,12 +117,27 @@
         if(camposcorrectos){
             //$("#modala").collapse();
 
-            swal({
-                title: 'Buen Trabajo!',
-                text: 'Contraseña cambiada',
-                type: 'success',
-                confirmButtonText: 'OK',
-            })
+            var datosForm = $(this).serialize();
+
+            var request = $.ajax({
+                dataType : "text",
+                url:"contact",
+                type:"post",
+                data:datosForm
+            });
+
+            request.done(function(response){
+
+                swal({
+                    title: 'Buen Trabajo!',
+                    text: 'Mensaje de contacto enviado',
+                    type: 'success',
+                    confirmButtonText: 'OK',
+                });
+
+            });
+
+
         }
     }
 

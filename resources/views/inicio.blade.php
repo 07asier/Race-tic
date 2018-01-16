@@ -14,13 +14,6 @@
                 </h1>
 
             </div>
-
-            <div>
-                <br> </br>
-                <br> </br>
-                <br> </br>
-                <a class="btn btn-lg  black colordesc" aria-pressed="true" href="#services">Descubrenos</a>
-            </div>
         </div>
     </div>
 </header>
