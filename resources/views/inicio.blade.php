@@ -29,7 +29,6 @@
     <div class="container fondodiv">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <hr class="my-4">
                 <h2 class="section-heading">¿Por qué nosotros?</h2>
 
             </div>
