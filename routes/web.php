@@ -47,6 +47,10 @@ Route::get('/comofunciona', function () {
     return view('comofunciona');
 });
 
+Route::get('/carreras', function () {
+    return view('carreras');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -63,6 +67,7 @@ Route::post('dato','PerfilController@data');
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.home');
+    Route::get('/home', 'AdminController@index')->name('admin.home');
     Route::get('/login', 'AuthAdmin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'AuthAdmin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'AuthAdmin\LoginController@logout')->name('admin.logout');
@@ -72,9 +77,10 @@ Route::prefix('admin')->group(function() {
     Route::post('/password/reset', 'AuthAdmin\ResetPasswordController@reset');
 });
 
-Route::get('/prueba', function () {
-    return view('email/email');
+Route::get('/carreras', function () {
+    return view('carreras');
 });
+
 
 /*
 Route::get('/adminVerUsuarios','GestionarUsuariosController@ver');

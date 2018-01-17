@@ -15,15 +15,17 @@ class CreateCochesTable extends Migration
     {
         Schema::create('coches', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->integer('num_serie')->unique();
             $table->primary('num_serie');
+            $table->integer('num_serie')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('marca');
             $table->string('motor');
             $table->string('modelo');
             $table->longText('mensaje');
             $table->rememberToken();
-            $table->timestamps();
+            //$table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
 
         Schema::table('coches',function(Blueprint $table) {

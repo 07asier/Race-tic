@@ -14,7 +14,10 @@ class Coche extends Model
     {
         return $this->belongsTo('App\User');
     }
-
+    public function carreras()
+    {
+        return $this->hasMany('App\Carrera');
+    }
 
 }
 

@@ -58,7 +58,7 @@
                 @else
                         <li><a href="coches" id="menus">Coches</a></li>
                         <li><a href="contacto" id="menus">Contacto</a></li>
-
+                        <li><a href="carreras" id="menus">Carreras</a></li>
                 @endguest
             </ul>
             <ul class="nav navbar-nav navbar-right">

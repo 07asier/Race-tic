@@ -12,6 +12,7 @@
                 <div class="panel-body">
                     Tu cuenta ha sido registrada, se te ha enviado un email para verificar tu cuenta.
                     You have successfully registered. An email is sent to you for verification.
+                    <a href="https://mail.google.com/mail/">GMAIL</a>
                 </div>
             </div>
         </div>
