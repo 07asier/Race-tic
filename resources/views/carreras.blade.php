@@ -63,6 +63,8 @@
                     </tbody>
                 </table>
 
+                <button>Ver en vivo</button>
+
 
             </div>
         </div>

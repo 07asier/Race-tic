@@ -26,15 +26,10 @@
                 <ul class="container details">
                     <li><i class="fa fa-envelope"></i>  Correo Electronico:   {{Auth::user()->email }}</li>
                     <br>
-                    <br>
+
                     <li><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</li>
-                    <br>
-
-
-
-
-                    <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
                 </ul>
+                <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
             </div>
 
         </div>

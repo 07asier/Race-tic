@@ -36,9 +36,9 @@
 
                                                     <h4 class="title">
                                                         {{$data->marca}}
-                                                        <span class="pull-right pagado">Apagado</span>
+
                                                         <br>
-                                                        <button  data-stuff="{{$data->num_serie}}" data  data-toggle="modal" data-target="#info-modal" class="info-modal material-button material-button-toggle pull-right" type="button">
+                                                        <button  data-stuff="{{$data->num_serie}}?ª¿!!{{$data->mensaje}}?ª¿!!{{$data->created_at}}"   data-toggle="modal" data-target="#info-modal" class="info-modal material-button material-button-toggle pull-right" type="button">
                                                             <span class="fa fa-plus" aria-hidden="true"></span>
                                                         </button>
 
@@ -67,9 +67,12 @@
 
                             <script>
                                 $(document).on("click", ".info-modal", function () {
-                                    var numero_serie = $(this).data('stuff');
-                                    $("#n_serie").text("Numero de serie:"+ numero_serie + " Mensaje:" + "Fecha creacion:");
-
+                                    var arrayDatos = $(this).data('stuff');
+                                    var arrayDatoseparados=arrayDatos.split("?ª¿!!");
+                                    for(var i=0;i<arrayDatoseparados.length;i++){
+                                        console.log(arrayDatoseparados[0]);
+                                    }
+                                    $("#n_serie").text("Numero de serie:"+arrayDatoseparados[0] + "\nMensaje:" + arrayDatoseparados[1] + "\nFecha creacion:" + arrayDatoseparados[2]);
 
                                 });
                             </script>

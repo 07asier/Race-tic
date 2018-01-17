@@ -50,7 +50,8 @@
             </button>
             <a class="navbar-brand" href="inicio" id="titulo">Race-tic</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse collapse navbar-collapse" role="navigation"  data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
+             aria-expanded="false" aria-label="Toggle navigation" id="myNavbar">
             <ul class="nav navbar-nav">
                 @guest
                     <li><a href="contacto" id="menus">Contacto</a></li>
