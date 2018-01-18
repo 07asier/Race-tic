@@ -56,10 +56,13 @@ Route::get('/carreras', function () {
     return view('Carreras.carreras');
 });
 
+Route::get('/carreras', 'CarrerasController@index')->name('Carreras.carreras');
+
 Route::get('/carrerasenvivo', function () {
     return view('Carreras.carrerasenvivo');
 });
 
+Route::get('/carrerasenvivo', 'CarrerasEnVivoController@index')->name('Carreras.carrerasenvivo');
 
 Auth::routes();
 
