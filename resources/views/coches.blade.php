@@ -72,7 +72,7 @@
                                     for(var i=0;i<arrayDatoseparados.length;i++){
                                         console.log(arrayDatoseparados[0]);
                                     }
-                                    $("#n_serie").text("Numero de serie:"+arrayDatoseparados[0] + "\nMensaje:" + arrayDatoseparados[1] + "\nFecha creacion:" + arrayDatoseparados[2]);
+                                    $("#n_serie").html("Numero de serie:"+arrayDatoseparados[0] + "<br/>Mensaje:" + arrayDatoseparados[1] + "<br/>Fecha creacion:" + arrayDatoseparados[2]);
 
                                 });
                             </script>

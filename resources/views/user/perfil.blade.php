@@ -41,13 +41,6 @@
     </div>
     </div>
 
-    <?php
-            /*
-    $oldcontra = new \App\Http\Controllers\PerfilController();
-    $oldp = $oldcontra->getOldPass();
-    echo $oldp;*/
-    ?>
-
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
            <div class="modal-dialog">
                <div class="loginmodal-container">

@@ -111,7 +111,7 @@
                                 <div class="tab-pane" id="portlet_tab2">
 
                                     <p>Abrimos enchufamos el OBD en la ranura del coche. La ranura se encuentra debajo del volante.Si no encuentras dónde está la ranura busca aqui:<a href="https://blog.reparacion-vehiculos.es/conector-obd-coche"> ¿Dónde está mi ranura?</a> </p>
-                                    <img src="images/obd2.jpg" class="imgmitad" width="35%" height="35%">
+                                    <img src="images/obd2.jpg" class="imgmitad" width="32%" height="32%">
                                     <br>
                                 </div>
                                 <div class="tab-pane" id="portlet_tab3">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- END Portlet PORTLET-->
+
                 </div>
                 <div class="col-md-6">
                     <img src="images/raceticresumen.png" class="imgmitad" width="350" height="250">

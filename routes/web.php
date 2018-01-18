@@ -12,9 +12,6 @@
 | Route::get('/verify/{token}','Auth\RegisterController@verify');
 */
 
-Route::post('/contactoconfirm', function () {
-    return view('email.contactoconfirm');
-});
 
 Route::get('/', function () {
     return view('inicio');
@@ -22,34 +19,47 @@ Route::get('/', function () {
 Route::get('/inicio', function () {
     return view('inicio');
 });
+
+//Rutas a contacto
 Route::get('/contacto', function () {
     return view('contacto');
 });
 
-
 Route::post('contact', 'ContactoController@datosContacto');
-//Middleware a coches añadido
+
+Route::post('/contactoconfirm', function () {
+    return view('email.contactoconfirm');
+});
+
+//Rutas a coches
 Route::get('/coches',['middleware'=>'auth', function () {
     return view('coches');
 }]);
 
-/*
-
-Route::get('/adminEditarUsuario/{id}', function (){
-    $usuarios = DB::table('users')->get();
-    return view('editarUsuarios', ['usuarios' => $usuarios]);
-});
- */
-
 Route::post('add','CocheController@add');
+
 
 Route::get('/comofunciona', function () {
     return view('comofunciona');
 });
 
+
+//Rutas al perfil
+Route::get('/perfil',['middleware'=>'auth',  function () {
+    return view('user/perfil');
+}]);
+
+Route::post('dato','PerfilController@data');
+
+//Rutas a carreras
 Route::get('/carreras', function () {
-    return view('carreras');
+    return view('Carreras.carreras');
 });
+
+Route::get('/carrerasenvivo', function () {
+    return view('Carreras.carrerasenvivo');
+});
+
 
 Auth::routes();
 
@@ -57,12 +67,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
-//Middleware a Perfil añadido
-Route::get('/perfil',['middleware'=>'auth',  function () {
-    return view('user/perfil');
-}]);
-
-Route::post('dato','PerfilController@data');
 
 
 Route::prefix('admin')->group(function() {
@@ -77,9 +81,6 @@ Route::prefix('admin')->group(function() {
     Route::post('/password/reset', 'AuthAdmin\ResetPasswordController@reset');
 });
 
-Route::get('/carreras', function () {
-    return view('carreras');
-});
 
 
 /*
@@ -92,3 +93,12 @@ Route::get('/adminEditarUsuario/{id}', 'GestionarUsuariosController@editar');
 Route::put ('/adminActualizarUsuario/{id}','GestionarUsuariosController@update');
 */
 
+
+
+/*
+
+Route::get('/adminEditarUsuario/{id}', function (){
+    $usuarios = DB::table('users')->get();
+    return view('editarUsuarios', ['usuarios' => $usuarios]);
+});
+ */
