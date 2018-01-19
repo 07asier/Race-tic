@@ -11,34 +11,28 @@
     </div>
 
     <div id="datos" class="tabcontent">
-        <h3>Datos</h3>
+
         <div class="row">
             <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                 <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
             </div>
             <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                 <div class="container">
-                    <hr class="my-4">
                     <h2>{{ Auth::user()->name }}</h2>
-
                 </div>
                 <hr>
-                <ul class="container details">
-                    <li><i class="fa fa-envelope"></i>  Correo Electronico:   {{Auth::user()->email }}</li>
+                <div class="container details">
+                    <p><i class="fa fa-envelope"></i>  Correo Electronico:   {{Auth::user()->email }}</p>
                     <br>
 
-                    <li><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</li>
-                </ul>
-                <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Cambiar Contraseña</button>
+                    <p><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</p>
+                </div>
+                <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info ">Cambiar Contraseña</button>
             </div>
 
         </div>
     </div>
 
-    <div id="coches" class="tabcontent">
-        <h3>Coches asociados</h3>
-
-    </div>
     </div>
 
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -75,7 +69,7 @@
                    </form>
                </div>
            </div>
-       </div>
+    </div>
 
     <script>
         window.onload = iniciar;

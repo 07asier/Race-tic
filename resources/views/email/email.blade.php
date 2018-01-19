@@ -17,9 +17,9 @@
                                     <table class="tablewidth">
                                         <tr>
                                             <td rowspan="2" class="td">
-                                                <img class="imgposition"  src="../images/racetic.png" />
-                                                 {{url('/verifyemail',$email_token)}}
+                                                <img class="imgposition"  src="https://image.ibb.co/mXAHpG/racetic.png" />
 
+                                                <img src="https://image.ibb.co/mXAHpG/racetic.png" alt="racetic" border="0" />
                                             </td>
                                         </tr>
                                     </table>
@@ -33,7 +33,7 @@
                             <td class="tdtext" >
                                 <p>Gracias por registrarte.</p>
                                 <p><br />Para registrar tu cuenta, haz click en el siguiente enlace:</p>
-
+                                {{url('/verifyemail',$email_token)}}
                                 <p> </p>
                                 <p>Race-tic</p>
 
@@ -42,7 +42,7 @@
                         <tr>
                             <td>
                                 <div class="lastdiv">
-                                    © 2017 <a href="http://racetic.com" target="_blank" class="link">racetic.com</a>
+                                    © 2017 <a href="http://racetic.com" target="_blank" class="link">http://racetic.herokuapp.com/</a>
                                 </div>
                             </td>
                         </tr>

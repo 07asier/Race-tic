@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
 body{
     background-image: url("../images/f1404.jpg");
 }
 
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .error-text{
-    font-family:"Noto Kufi Arabic",sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size:150%;
     color: #2d353c;
     font-weight: bold;
@@ -28,4 +35,26 @@ body{
 }
 .nb-error .input-group{
     margin: 30px 0;
+}.myButton {
+     background-color:#647788;
+     -moz-border-radius:28px;
+     -webkit-border-radius:28px;
+     border-radius:28px;
+     border:1px solid #0c1a1e;
+     display:inline-block;
+     cursor:pointer;
+     color:black;
+     font-family:'Montserrat',sans-serif;
+     font-size:17px;
+     padding:16px 31px;
+     text-decoration:none;
+     font-weight: bold;
+
+ }
+.myButton:hover {
+    background-color:#647788;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
 }

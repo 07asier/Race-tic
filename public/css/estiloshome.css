@@ -57,19 +57,6 @@ li a {
 }
 
 /*Estilos CUERPO*/
-/*
-header.masthead {
-    padding-top: 10rem;
-    padding-bottom: calc(30em - 81px);
-    background-image: url("../images/f1.jpg");
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-}
-*/
 
 .fondodiv{
     background-color:white;
@@ -108,13 +95,9 @@ h2,h3,h4,p,label{
 }
 
 .parallax {
-    /* The image used */
+
     background-image: url("../images/f1.jpg");
-
-    /* Set a specific height */
     height: 600px;
-
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -130,14 +113,14 @@ h2,h3,h4,p,label{
 
 
 
-/* Style the tab */
+
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
 
-/* Style the buttons inside the tab */
+
 .tab button {
     background-color: inherit;
     float: left;
@@ -149,17 +132,17 @@ h2,h3,h4,p,label{
     font-size: 17px;
 }
 
-/* Change background color of buttons on hover */
+
 .tab button:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
+
 .tab button.active {
     background-color: #ccc;
 }
 
-/* Style the tab content */
+
 .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -168,31 +151,8 @@ h2,h3,h4,p,label{
 }
 
 
-
-/* Estilos FOOTER
-
-footer {
-    background-color: black;
-}
-#footer1 {
-    height: 82vh;
-}
-#parrafo{
-    color: lightblue;
-}
-
-footer {
-    background-color: #101010;
-}
-#footer1 {
-    height: 82vh;
-}
-#parrafo{
-    color: lightblue;
-}*/
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);*/
 ul,li{
     padding:0;
     margin:0;
@@ -393,9 +353,7 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
     margin: 0 auto;
 }
 
-/*
-Generic Styling, for Desktops/Laptops
-*/
+
 .table-vertical {
     width: 100%;
     height:auto;
@@ -418,11 +376,7 @@ Generic Styling, for Desktops/Laptops
 }
 
 
-/*
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
+
 @media
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
@@ -467,4 +421,65 @@ only screen and (max-width: 760px),
     .table-vertical>tbody>tr>td:before { content: attr(data-th); }
 }
 
+body {
 
+    background-color: #f7f7f7;
+}
+
+.lib-panel {
+    margin-bottom: 20Px;
+}
+.lib-panel img {
+    width: 102%;
+    background-color: transparent;
+}
+
+.lib-panel .row,
+.lib-panel .col-md-6 {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+.lib-panel .lib-row.lib-desc {
+    position: relative;
+    height: 100%;
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.row-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+}
+
+.no-padding {
+    padding: 0;
+}
