@@ -28,26 +28,12 @@ class PerfilController extends Controller
         foreach ($users as $user) {
 
             $pass = $request->input("pass");
-            //$oldpass = $request->input("oldpass");
-
-            $hashedPassword = $user->password;
-
-            // (Hash::check($oldpass, $hashedPassword)) {
-                //$this-> $passok = $oldpass;
-                //$this->setOldPass($oldpass);
-                //print_r($this->setOldPass($oldpass));
-                //print_r($oldpass);
-
-
                 DB::table('users')
                     ->where('id', $user->id)
                     ->update(['password' => bcrypt("$pass")]);
                 return back();
 
-            //}else{
 
-               //return back();
-            //}
         }
     }
 

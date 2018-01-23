@@ -46,10 +46,10 @@
                     </tbody>
                 </table>
 
-
-                <form action="carrerasenvivo">
+                <button href="{{ route('home') }}">Ver en vivo</button>
+                {{--<form action="carrerasenvivo">
                     <button class="btn btn-info" type="submit">Ver en vivo</button>
-                </form>
+                </form>--}}
 
             </div>
         </div>
