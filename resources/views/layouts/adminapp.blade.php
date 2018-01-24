@@ -105,7 +105,6 @@
                     @else
                         <li><a href="" id="menus"> Gestion Usuarios</a></li>
                         <li><a href="" id="menus"> Funcion 2</a></li>
-
                         @endguest
             </ul>
             <ul class="nav navbar-nav navbar-right">

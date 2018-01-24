@@ -7,7 +7,6 @@
             <h3></h3>
         </div>
     </div>
-
     <div class="container ">
         <div class="row well-sm well">
             <div class="col-md-10 ">
@@ -19,6 +18,7 @@
                     <p>Id carrera:</p>
                     <p>Marca:</p>
                     <p>Modelo:</p>
+
                 </div>
                 <div class="col-md-4">
                     <p>Velocidad(KMH):</p>
