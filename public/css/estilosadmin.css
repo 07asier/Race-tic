@@ -214,3 +214,73 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
     background-color: #0f8845;
     color: white;
 }
+
+
+
+.titulo{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#tabla{
+    align-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+
+}
+.boton{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 37px;
+    text-decoration: none;
+}
+.boton.eliminar{
+    background-color: red;
+    color: whitesmoke;
+}
+.boton.editar{
+    background-color: blue;
+    color: whitesmoke;
+}
+
+
+.cabecera{
+    color: #9D9D9D;
+    background-color: #222222;
+
+}
+.contenidoTabla{
+    background-color: #0C1A1E;
+    color: whitesmoke;
+}
+.contenidoCabecera{
+    text-align: center;
+}
+/* <-- /Tabla de usuarios --> */
+
+/* <-- Editor de usuarios --> */
+.editor{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #0C1A1E;
+    align-content: center;
+}
+.cabeceraEditor{
+    color: whitesmoke;
+}
+#campos{
+    border: 1px solid;
+}
+.boton.actualizar{
+    background-color: #0d3625;
+    color: whitesmoke;
+}

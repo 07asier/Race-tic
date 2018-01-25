@@ -31,62 +31,10 @@
     <link href="css/estilosadmin.css" rel="stylesheet">
 
 
-
 </head>
 
 <body >
 
-<!-- Navigation -->
-
-{{--
-<nav class="navbar-inverse" id="navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="inicio" id="titulo">Race-tic</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="coches" id="menus">Coches</a></li>
-                <li><a href="contacto" id="menus">Contacto</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-
-
-
-                @guest
-                    <li><a href="register" id="menus"><span class="glyphicon glyphicon-user color"></span> Registrarse</a></li>
-                    <li><a href="login" id="menus"><span class="glyphicon glyphicon-log-in color"></span> Iniciar sesión</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                        @endguest
-            </ul>
-        </div>
-    </div>
-</nav>
---}}
 
 <nav class="navbar">
     <div class="container-fluid" id="navbar">
@@ -100,23 +48,21 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                @guest
-
-                    @else
-                        <li><a href="" id="menus"> Gestion Usuarios</a></li>
-                        <li><a href="" id="menus"> Funcion 2</a></li>
-                        @endguest
+                <li><a href="adminVerUsuarios" id="menus">Ver usuario </a></li>
+                <li><a href="home2" id="menus">Prueba </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
                 @guest
 
                     <li><a href="login" id="menus"><span class="glyphicon glyphicon-log-in colorboton"></span> Iniciar sesión</a></li>
-                    @else
+
+                  @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
+
 
                             <ul class="dropdown-menu">
                                 <li>

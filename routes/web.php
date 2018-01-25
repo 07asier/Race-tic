@@ -72,12 +72,21 @@ Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
 
 
+
+
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.home');
     Route::get('/home', 'AdminController@index')->name('admin.home');
     Route::get('/login', 'AuthAdmin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'AuthAdmin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'AuthAdmin\LoginController@logout')->name('admin.logout');
+
+    Route::get('/home2', function () {
+        return view('admin.home');
+    });
+
+
+
     Route::get('/password/reset', 'AuthAdmin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('/password/email', 'AuthAdmin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
     Route::get('/password/reset/{token}', 'AuthAdmin\ResetPasswordController@showResetForm')->name('admin.password.reset');
@@ -85,23 +94,11 @@ Route::prefix('admin')->group(function() {
 });
 
 
-
-/*
 Route::get('/adminVerUsuarios','GestionarUsuariosController@ver');
-
 Route::get('/adminEliminarUsuario/{id}', 'GestionarUsuariosController@eliminar');
-
 Route::get('/adminEditarUsuario/{id}', 'GestionarUsuariosController@editar');
-
 Route::put ('/adminActualizarUsuario/{id}','GestionarUsuariosController@update');
-*/
 
 
 
-/*
 
-Route::get('/adminEditarUsuario/{id}', function (){
-    $usuarios = DB::table('users')->get();
-    return view('editarUsuarios', ['usuarios' => $usuarios]);
-});
- */
