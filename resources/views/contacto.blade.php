@@ -54,7 +54,7 @@
 
 
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary pull-right" id="btnContact" name="button">
+                                <button type="submit" class="md-btn pull-right" id="btnContact" name="button">
                                     Enviar</button> {{-- data-toggle="modal" data-target=".bs-example-modal-lg" --}}
                             </div>
 

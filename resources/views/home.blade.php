@@ -82,7 +82,7 @@
                                 <p>En este apartado podrás añadir todos tus coches !</p>
                                 <br>
                                 <form action="coches">
-                                    <button class=" btn btn-info">Acceder</button>
+                                    <button class="md-btn">Acceder</button>
                                 </form>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                 <p>Accede a las carreras en vivo para poder ver todos los datos de tu coche !</p>
 
                                 <form action="carreras">
-                                <button class=" btn btn-info">Acceder</button>
+                                    <button class="md-btn">Acceder</button>
                                 </form>
                             </div>
 

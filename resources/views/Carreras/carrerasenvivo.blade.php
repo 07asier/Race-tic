@@ -10,7 +10,7 @@
     <div class="container ">
         <div class="row well-sm well">
             <div class="col-md-10 ">
-            <h3>En vivo   <button  class="refrescar btn btn-info ">
+            <h3>En vivo   <button  class="refrescar md-btn ">
                     <span class="glyphicon glyphicon-refresh"></span> Actualizar
                 </button></h3>
                 <div class="col-md-4">

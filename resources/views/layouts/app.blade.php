@@ -92,7 +92,7 @@
                                                 <p class="text-left"><strong>{{ Auth::user()->name }}</strong></p>
                                                 <p class="text-left small">{{ Auth::user()->email }}</p>
                                                 <p class="text-left">
-                                                    <a href="perfil" class="btn btn-primary btn-block btn-sm">Perfil</a>
+                                                    <a href="perfil" class="md-btn btn-block btn-sm">Perfil</a>
                                                 </p>
                                             </div>
                                         </div>

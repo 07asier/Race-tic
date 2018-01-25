@@ -12,7 +12,7 @@
     <p class="error-text">Página no encontrada</p>
     <div class="error-desc">
         <div class="input-group">
-            <button onclick="location.href='inicio'" class="myButton">Inicio</button>
+            <button onclick="location.href='inicio'" class="md-btn">Inicio</button>
         </div>
     </div>
 </div>

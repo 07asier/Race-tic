@@ -19,5 +19,4 @@ class CarrerasEnVivoController extends Controller
 
     }
 
-
 }

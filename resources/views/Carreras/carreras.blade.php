@@ -50,7 +50,7 @@
                 {{--<form action="carrerasenvivo">
                     <button class="btn btn-info" type="submit">Ver en vivo</button>
                 </form>--}}
-                <li><a class="btn btn-info" href="carrerasenvivo">Ver en vivo</a></li>
+                <li><a class="md-btn" href="carrerasenvivo">Ver en vivo</a></li>
 
             </div>
         </div>

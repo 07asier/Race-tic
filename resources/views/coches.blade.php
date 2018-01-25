@@ -13,7 +13,7 @@
             <div class="col-md-8 "> <!-- col-md-8 -->
                 <div class="">
                         <div class="row">
-                            <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info">Añadir Coches</button>
+                            <button  data-toggle="modal" data-target="#login-modal" class="md-btn">Añadir Coches</button>
                             <h3>Coches añadidos</h3>
 
                             <?php $id = Auth::user()->id;

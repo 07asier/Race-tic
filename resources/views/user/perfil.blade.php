@@ -27,7 +27,7 @@
 
                     <p><i class="glyphicon glyphicon-lock"></i>  Contraseña: ********</p>
                 </div>
-                <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-info ">Cambiar Contraseña</button>
+                <button type="button" data-toggle="modal" data-target="#login-modal" class="md-btn ">Cambiar Contraseña</button>
             </div>
 
         </div>
