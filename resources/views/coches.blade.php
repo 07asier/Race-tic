@@ -207,11 +207,13 @@
                         text: 'Coche añadido',
                         type: 'success',
                         confirmButtonText: 'OK',
+                    }).then(function(){
+                        location.reload();
                     });
 
                 });
 
-                console.log("coche añadido");
+                //
 
                 var formulario = document.getElementById("formulario");
                 for(var i=0 ; i< formulario.length; i++)

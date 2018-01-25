@@ -50,18 +50,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="inicio" id="titulo">Race-tic</a>
+            <a class="navbar-brand" href="inicio" id="titulo">RACE-TIC</a>
         </div>
         <div class="collapse navbar-collapse collapse navbar-collapse" role="navigation"  data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
              aria-expanded="false" aria-label="Toggle navigation" id="myNavbar">
             <ul class="nav navbar-nav">
                 @guest
-                    <li><a href="contacto" id="menus">Contacto</a></li>
-                    <li><a href="comofunciona" id="menus">Cómo funciona</a></li>
+                    <li><a href="contacto" id="menus">CONTACTO</a></li>
+                    <li><a href="comofunciona" id="menus">COMO FUNCIONA</a></li>
                 @else
-                        <li><a href="coches" id="menus">Coches</a></li>
-                        <li><a href="contacto" id="menus">Contacto</a></li>
-                        <li><a href="carreras" id="menus">Carreras</a></li>
+                        <li><a href="coches" id="menus">COCHES</a></li>
+                        <li><a href="contacto" id="menus">CONTACTO</a></li>
+                        <li><a href="carreras" id="menus">CARRERAS</a></li>
                 @endguest
             </ul>
             <ul class="nav navbar-nav navbar-right">

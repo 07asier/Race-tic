@@ -7,13 +7,9 @@
 <header class="masthead text-center text-white d-flex parallax">
     <div class="container my-auto">
         <div class="row">
-            <div >
                 <h1 class="text-uppercase">
-                    <p class="colortitulo">OBTEN LOS DATOS DE TU COCHE.</p>
-                    <p>EN UN ABRIR Y CERRAR DE OJOS.</p>
+                    VISUALIZALO TODO.
                 </h1>
-
-            </div>
         </div>
     </div>
 </header>

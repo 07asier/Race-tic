@@ -13,6 +13,7 @@
 
 
 li {
+    font-family: Montserrat, sans-serif;
     float: left;
 }
 
@@ -151,8 +152,7 @@ h2,h3,h4,p,label{
 }
 
 
-/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);*/
+
 ul,li{
     padding:0;
     margin:0;
@@ -486,7 +486,7 @@ body {
 
 
 .md-btn {
-    font-family: "Roboto medium", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     display: inline-block;
     height: 36px;
