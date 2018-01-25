@@ -3,7 +3,7 @@
 @section('content')
    <div class="container">
        <div class="row">
-        <h3>Contáctanos</h3>
+           <h3></h3>
        </div>
    </div>
 
@@ -11,6 +11,7 @@
         <div class="row">
             <div class=" "> <!-- col-md-8 -->
                 <div class="well well-sm">
+                    <h3>Contáctanos</h3>
                     <form id="formulario" action="contact" method="post">
                         {{ csrf_field() }}
 

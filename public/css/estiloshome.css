@@ -430,9 +430,11 @@ body {
     margin-bottom: 20Px;
 }
 .lib-panel img {
-    width: 102%;
+    width: 104%;
     background-color: transparent;
 }
+
+
 
 .lib-panel .row,
 .lib-panel .col-md-6 {

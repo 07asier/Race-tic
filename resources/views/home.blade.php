@@ -98,7 +98,7 @@
                 <div class="lib-panel">
                     <div class="row box-shadow">
                         <div class="col-md-6">
-                            <img class="lib-img-show"  src="images/racecar.png">
+                            <img class="lib-img-show anchura"  src="images/racecar.png">
                         </div>
                         <div class="col-md-6">
                             <div class="lib-row lib-header">
