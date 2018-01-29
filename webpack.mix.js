@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+var mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +11,15 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix
+
+
+  .js('resources/assets/js/app.js', 'public/js')
+  .js('node_modules/jquery/dist/jquery.js', 'public/js')
+
    .sass('resources/assets/sass/app.scss', 'public/css');
+    mix.minify('public/js/app.js');
+    mix.minify('public/js/jquery.js');
+    mix.minify('public/js/sweetalert2.js');
+    mix.minify('public/css/sweetalert2.css');
+mix.minify('public/css/estiloshome.css');
