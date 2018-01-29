@@ -24,13 +24,10 @@
                     <p>Velocidad(KMH):</p>
                     <p>Revoluciones(RPM):</p>
                     <p>Temperatura(Cº):</p>
-                    <p>Depósito(%):</p>
+
                 </div>
                 <div class="col-md-4">
-                    <p>Distancia recorrida(m):</p>
-                    <p>Consumo(L):</p>
-                    <p>Tipo de combustible:</p>
-                    <p>Torque(n-m):</p>
+
                 </div>
 
             </div>
