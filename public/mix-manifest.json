@@ -1,0 +1,10 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/jquery.js": "/js/jquery.js",
+    "/js/app.min.js": "/js/app.min.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/sweetalert2.min.js": "/js/sweetalert2.min.js",
+    "/css/sweetalert2.min.css": "/css/sweetalert2.min.css",
+    "/css/estiloshome.min.css": "/css/estiloshome.min.css"
+}
