@@ -15,6 +15,9 @@
                     <form id="formulario" action="contact" method="post">
                         {{ csrf_field() }}
 
+                        <div id="errordiv" class="alert alert-danger" hidden>
+                            <strong>Error!</strong>Rellena correctamente los campos.
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -54,10 +57,13 @@
                             </div>
 
 
+
+
                             <div class="col-md-12">
                                 <button type="submit" class="md-btn pull-right" id="btnContact" name="button">
                                     Enviar</button> {{-- data-toggle="modal" data-target=".bs-example-modal-lg" --}}
                             </div>
+
 
                                 <div id="modala" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                                     <div class="modal-dialog modal-lg">
@@ -134,10 +140,15 @@
                     text: 'Mensaje de contacto enviado',
                     type: 'success',
                     confirmButtonText: 'OK',
+                }).then(function(){
+                    location.reload();
                 });
+
 
             });
 
+        }else{
+            $("#errordiv").collapse();
 
         }
     }
