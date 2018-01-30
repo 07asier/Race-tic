@@ -21,12 +21,12 @@ class PerfilController extends Controller
 
     public function data(Request $request){
 
-
+        //se recoge el id del usuario correspondiente
         $id = Auth::user()->id;
         $users = DB::table('users')->where('id', $id)->get();
         //for para cada usuario
         foreach ($users as $user) {
-
+            //se actualiza la contraseña
             $pass = $request->input("pass");
                 DB::table('users')
                     ->where('id', $user->id)

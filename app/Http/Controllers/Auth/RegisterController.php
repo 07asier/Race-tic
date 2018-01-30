@@ -53,6 +53,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        //se validan los datos introducidos
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -68,6 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //creacion de un nuevo usuario con los datos introducidos
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -97,11 +99,11 @@ class RegisterController extends Controller
         try
         {
             $user = $this->create($request->all());
-            // After creating the user send an email with the random token generated in the create method above
+            // Despues de crear el usuario se envia un email con el token generado
             $email = new EmailVerification(new User(['email_token' => $user->email_token, 'name' => $user->name]));
             Mail::to($user->email)->send($email);
             DB::commit();
-            //return back();
+            //se retorna la vista verificacion;
             return view ('verification');
         }
         catch(Exception $e)

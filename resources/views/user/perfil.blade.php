@@ -72,22 +72,22 @@
     </div>
 
     <script>
-        window.onload = iniciar;
+
+        $(document).ready(iniciar);
 
         function iniciar(){
-            var formulario = document.getElementById("formulario");
-            formulario.addEventListener("submit", validar);
 
+            $("#formulario").on("submit", validar);
         }
 
         function validar(event){
 
             event.preventDefault();
 
-            var pass = document.getElementById("pass");
-            var passconf = document.getElementById("passconf");
+            var pass =$("#pass");
+            var passconf = $("#passconf");
 
-            if(pass.value.length < 6 || pass.value.length < 6){
+            if(pass.val().length < 6 || pass.val().length < 6){
 
                 console.log("contraseña menor a 6");
                 $("#errordiv").collapse();
@@ -124,10 +124,11 @@
 
                 console.log("contraseña cambiada");
 
-                var formulario = document.getElementById("formulario");
-                for(var i=0 ; i< formulario.length; i++)
+                var form = $("#formulario");
+                for(var i=0 ; i< form.length; i++)
                 {
-                    formulario[i].value = "";
+
+                    form[i].reset();
                 }
 
             }
@@ -136,7 +137,7 @@
 
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
+            tabcontent = $(".tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }

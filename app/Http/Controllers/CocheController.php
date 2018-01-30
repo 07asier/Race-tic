@@ -19,31 +19,18 @@ class CocheController extends Controller
 
     public function add()
     {
+        //se recoge el id del usuario correspondiente
         $id = Auth::user()->id;
         $users = DB::table('coches')->where('user_id', $id)->get();
 
+        //consulta a la BD
             DB::table('coches')->insert(
                 ['num_serie' => Input::get('numserie'), 'user_id' => $id, 'marca' => Input::get('subject'),
                     'motor' => Input::get('motor'), 'modelo' => Input::get('modelo'), 'mensaje' => Input::get('message')]
             );
 
-
-            /*Coche::create(array(
-                'num_serie'=>Input::get('numserie'),
-                'marca'=>Input::get('subject'),
-                'motor'=>Input::get('motor'),
-                'modelo'=>Input::get('modelo'),
-                'mensaje'=>Input::get('message')
-            ));*/
-
+        //redireccion a coches
         return redirect("coches");
-    }
-
-    public function save_data(Request $request)
-    {
-        /*$coche = Cars::create($request->all());
-        return redirect()->route('/inicio');*/
-
     }
 
 }

@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //verificacion del usuario
     public function verified()
     {
         $this->verified = 1;
@@ -35,10 +36,13 @@ class User extends Authenticatable
         $this->save();
     }
 
+    //Relaciones con las otras tablas
+    //Parte 1
     public function coches()
     {
         return $this->hasMany('App\Coche');
     }
+    //Parte 1
     public function carreras()
     {
         return $this->hasMany('App\Carrera');

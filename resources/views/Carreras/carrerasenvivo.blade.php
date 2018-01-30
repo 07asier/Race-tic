@@ -10,41 +10,55 @@
     <div class="container ">
         <div class="row well-sm well">
             <div class="col-md-10 ">
-            <h3>En vivo   <button  class="refrescar md-btn ">
-                    <span class="glyphicon glyphicon-refresh"></span> Actualizar
-                </button></h3>
+            <h3>En vivo</h3>
+
+                <?php $id = Auth::user()->id;
+                $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
+                ?>
+
+                @foreach($carreras as $key => $data)
+
+
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">ID Carrera</th>
+                                <th scope="col">Numero Serie</th>
+                                <th scope="col">Velocidad(KM/H)</th>
+                                <th scope="col">Revoluciones(RPM)</th>
+                                <th scope="col">Temperatura(Cº)</th>
+                                <th scope="col">Presion ruedas delanteras(bar)</th>
+                                <th scope="col">Presion ruedas traseras(bar)</th>
+                                <th scope="col">Cosas</th>
+                                <th scope="col">Cosas</th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row">{{$data->id_carrera}}</th>
+                                <td>{{$data->n_serie}}</td>
+                                <td>{{$data->velocidad}}</td>
+                                <td>{{$data->revoluciones}}</td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+
                             </tbody>
                         </table>
+
+                @endforeach
+
+
+
+
+                <button  class="refrescar md-btn ">
+                    <span class="glyphicon glyphicon-refresh"></span> Actualizar
+                </button>
                     </div>
         </div>
+
     </div>
+
+
 
 
 <script>

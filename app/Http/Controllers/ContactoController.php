@@ -14,6 +14,7 @@ class ContactoController extends Controller{
 
     protected function create(array $data){
 
+        //se crea un contacto nuevo mediante el modelo
         return Contacto::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -23,19 +24,14 @@ class ContactoController extends Controller{
 
 
     public function datosContacto(Request $request){
-        /*$this->validate($request,[
-            'nombre'=>"required|string",
-            'email'=>"required|string",
-            'mensaje'=>"required|string"
-        ]);
-        */
+        //validacion de los datos
         $this->validator($request->all())->validate();
 
         DB::beginTransaction();
         try
         {
             $contactinfo = $this->create($request->all());
-
+            //envio del email
             $email = new ContactoEmail(new Contacto([ 'name' => $contactinfo->name , 'email' => $contactinfo->email]));
             Mail::to($contactinfo->email)->send($email);
             DB::commit();

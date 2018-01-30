@@ -86,54 +86,6 @@
 
 @yield('content')
 
-<!--footer start from here-->
-
-{{--
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 footer-col">
-                <div class="logofooter">Race-tic</div>
-                <p>Empresa Nº1 en diagnostico a coches en tiempo real</p>
-                <p><i class="fa fa-map-pin"></i> Donostia , San-Sebastian</p>
-                <p><i class="fa fa-phone"></i>  +34 9999 999 999</p>
-                <p><i class="fa fa-envelope"></i> E-mail : racetic17@gmail.com</p>
-
-            </div>
-            <div class="col-md-3 col-sm-6 footer-col">
-                <img src="../images/racetic.png" width="150" height="100">
-            </div>
-            <div class="col-md-3 col-sm-6 footer-col">
-                <h6 class="heading7">Premios</h6>
-                <div class="post">
-                    <p>Premio a la empresa más innovadora <span>Agosto 3,2017</span></p>
-                    <p>Premio a la empresa más joven <span>Agosto 3,2017</span></p>
-
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 footer-col">
-                <h6 class="heading7">Mantente informado</h6>
-                <ul class="footer-social">
-                    <li><a href="https://es.linkedin.com/"><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></a></li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-<!--footer start from here-->
-
-<div class="copyright">
-    <div class="container">
-        <div class="col-md-6">
-            <p>© 2017 - All Rights Reserved</p>
-        </div>
-
-    </div>
-</div>
---}}
 
 </body>
 </html>
