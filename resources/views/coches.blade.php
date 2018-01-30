@@ -165,13 +165,11 @@
 
     <script type="text/javascript">
 
-        window.onload = iniciar;
-        //$(document).ready = iniciar;
+        $(document).ready(iniciar);
 
         function iniciar(){
-            var formulario = document.getElementById("formulario");
-            formulario.addEventListener("submit", validar);
 
+            $("#formulario").on("submit", validar);
         }
 
         function validar(event){
@@ -214,11 +212,11 @@
                 });
 
                 //
-
-                var formulario = document.getElementById("formulario");
-                for(var i=0 ; i< formulario.length; i++)
+                var form = $("#formulario");
+                for(var i=0 ; i< form.length; i++)
                 {
-                    formulario[i].value = "";
+
+                    form[i].reset();
                 }
 
             }

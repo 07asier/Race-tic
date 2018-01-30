@@ -86,12 +86,12 @@
 
 <script>
 
-    window.onload = iniciar;
+    $(document).ready(iniciar);
 
 
     function iniciar() {
-        var formulario = document.getElementById("formulario");
-        formulario.addEventListener("submit", validar);
+        var form = $("#formulario");
+        form.on("submit", validar);
 
     }
 
