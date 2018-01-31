@@ -90,7 +90,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         // Laravel validation
-        
+
         $this->validator($request->all())->validate();
 
         DB::beginTransaction();

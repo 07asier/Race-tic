@@ -13,7 +13,7 @@
     <div class="container ">
         <div class="row well-sm well">
             <div class="col-md-10 ">
-            <h3></h3>
+            <h3>En vivo</h3>
 
                 <?php $id = Auth::user()->id;
                 $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
@@ -24,7 +24,7 @@
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">En Vivo</h3>
+                            <h3 class="panel-title">Datos Generales</h3>
                             <div class="pull-right">
                                 <span class="refrescar clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
 								<i class="glyphicon glyphicon-refresh"></i>Actualizar

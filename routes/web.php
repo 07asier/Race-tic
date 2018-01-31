@@ -20,6 +20,11 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
+Route::get('/comofunciona', function () {
+    return view('comofunciona');
+});
+
+
 //Rutas a contacto
 Route::get('/contacto', function () {
     return view('contacto');
@@ -31,23 +36,22 @@ Route::post('/contactoconfirm', function () {
     return view('email.contactoconfirm');
 });
 
+
 //Rutas a coches
-Route::get('/coches',['middleware'=>'auth', function () {
+Route::get('/coches', function () {
     return view('coches');
-}]);
+});
+Route::get('/coches', 'CocheController@index')->name('coches');
 
 Route::post('add','CocheController@add');
 
 
-Route::get('/comofunciona', function () {
-    return view('comofunciona');
+//Rutas al perfil
+Route::get('/perfil', function () {
+    return view('user.perfil');
 });
 
-
-//Rutas al perfil
-Route::get('/perfil',['middleware'=>'auth',  function () {
-    return view('user/perfil');
-}]);
+Route::get('/perfil', 'PerfilController@index')->name('user.perfil');
 
 Route::post('dato','PerfilController@data');
 
@@ -58,20 +62,19 @@ Route::get('/carreras', function () {
 
 Route::get('/carreras', 'CarrerasController@index')->name('Carreras.carreras');
 
+//Rutas a carrerasenvivo
 Route::get('/carrerasenvivo', function () {
     return view('Carreras.carrerasenvivo');
 });
 
 Route::get('/carrerasenvivo', 'CarrerasEnVivoController@index')->name('Carreras.carrerasenvivo');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
-
-
-
 
 
 Route::prefix('admin')->group(function() {
@@ -84,7 +87,6 @@ Route::prefix('admin')->group(function() {
     Route::get('/home2', function () {
         return view('admin.home');
     });
-
 
 
     Route::get('/password/reset', 'AuthAdmin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
