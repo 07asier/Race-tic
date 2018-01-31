@@ -12,6 +12,15 @@ use DB;
 class ContactoController extends Controller{
 
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index(){
+        return view('contacto');
+    }
+
     protected function create(array $data){
 
         //se crea un contacto nuevo mediante el modelo

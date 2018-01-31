@@ -30,6 +30,8 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
+Route::get('/contact', 'ContactoController@index')->name('contacto');
+
 Route::post('contact', 'ContactoController@datosContacto');
 
 Route::post('/contactoconfirm', function () {
