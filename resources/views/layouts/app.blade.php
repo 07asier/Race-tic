@@ -58,7 +58,6 @@
             <ul class="nav navbar-nav">
                 @guest
                     <li><a href="contacto" id="menus">CONTACTO</a></li>
-                    <li><a href="comofunciona" id="menus">COMO FUNCIONA</a></li>
                 @else
                         <li><a href="coches" id="menus">COCHES</a></li>
                         <li><a href="contacto" id="menus">CONTACTO</a></li>

@@ -20,9 +20,7 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
-Route::get('/comofunciona', function () {
-    return view('comofunciona');
-});
+
 
 
 //Rutas a contacto
