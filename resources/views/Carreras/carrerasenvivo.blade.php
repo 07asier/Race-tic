@@ -106,7 +106,7 @@
             ]
         };
 
-        function adddata(){
+        function addData(){
             var datasetLength = myLineChart.data.datasets[0].data.length;
             for(var i=0;i<datasetLength;i++) {
                 <?php $id = Auth::user()->id;
@@ -116,16 +116,10 @@
                 myLineChart.data.labels[i+1] = "{{$data2->created_at}}";
                 myLineChart.update();
                 @endforeach
-
             }
 
 
-
         }
-
-
-
-
 
         var option = {
             showLines: true
@@ -134,8 +128,6 @@
             data:data,
             options:option
         });
-
-
 
         /*var canvas = document.getElementById('myChart');
         var myLineChart = Chart.Line(canvas,{
@@ -186,11 +178,9 @@
             }
         });*/
 
-
-
         $(".refrescar").on("click",function(){
 
-        adddata();
+            addData();
             //location.reload();
         });
 
