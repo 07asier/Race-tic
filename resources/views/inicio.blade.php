@@ -14,6 +14,8 @@
     </div>
 </header>
 
+
+<div class="fondodiv">
 <section id="services parallax">
     <div class="container fondodiv">
         <div class="row">
@@ -135,6 +137,6 @@
     </div>
 </section>
 
-
+</div>
 
 @endsection
