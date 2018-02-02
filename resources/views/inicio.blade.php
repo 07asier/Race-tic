@@ -36,9 +36,9 @@
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box mt-5 mx-auto">
-                    <img src="images/icons/security.png"> </img>
-                    <h3 >Fiable</h3>
-                    <p class="text-muted mb-0">Servicio 100% fiable</p>
+                    <img  src="images/cheap.png"> </img>
+                    <h3 >Económico</h3>
+                    <p class="text-muted mb-0">Servicio económico</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">

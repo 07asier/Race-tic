@@ -94,7 +94,7 @@
                                             <div class="">
                                                 <div class="form-group">
                                                     <label for="numserie">
-                                                        Numero de serie</label>
+                                                        Numero de serie OBD</label>
                                                     <div class="input-group">
                                                     <span class="">
                                                     </span>

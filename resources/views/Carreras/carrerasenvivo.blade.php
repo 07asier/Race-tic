@@ -50,8 +50,7 @@
                                     <th>{{$data->n_serie}}</th>
                                     <th>{{$data->velocidad}}</th>
                                     <th>{{$data->revoluciones}}</th>
-
-
+                                    <th>{{$data->temperatura}}</th>
 
                         </tr>
                         </tbody>
@@ -94,7 +93,7 @@
                     pointHoverBorderWidth: 2,
                     pointRadius: 5,
                     pointHitRadius: 10,
-                    data: ["{{$data->revoluciones}}"],
+                    data: ["{{$data->temperatura}}"],
                     @endforeach
 
                 }
@@ -106,10 +105,10 @@
             for(var i=0;i<datasetLength;i++) {
                 <?php $id = Auth::user()->id;
                     $carreras2 = DB::table('carreras')->where("usuario_id",$id)->get();?>
-                        @foreach($carreras2 as $key1 => $data2)
+                @foreach($carreras2 as $key1 => $data2)
                     myLineChart.data.datasets[0].data[i+1] = "{{$data2->velocidad}}";
-                myLineChart.data.labels[i+1] = "{{$data2->created_at}}";
-                myLineChart.update();
+                    myLineChart.data.labels[i+1] = "{{$data2->created_at}}";
+                    myLineChart.update();
                 @endforeach
             }
 
