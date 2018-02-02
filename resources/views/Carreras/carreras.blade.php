@@ -15,42 +15,43 @@
             <h3>Historial de Carreras</h3>
 
 
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>ID Carrera</th>
-                        <th>Num serie coche</th>
-                        <th>Usuario</th>
-                        <th>Fecha</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>7815688</td>
-                        <td>Asier</td>
-                        <td>25/10/2017</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>849965</td>
-                        <td>Aitor</td>
-                        <td>10/1/2018</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>100489</td>
-                        <td>Mikel</td>
-                        <td>2/1/2018</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Datos Generales</h3>
+                        <div class="pull-right">
+
+                        </div>
+                    </div>
+
+                    <table class="table table-hover" id="dev-table">
+                        <thead>
+                        <tr>
+                            <th>Id Carrera</th>
+                            <th>Numero serie</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Fecha </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <li><a class="md-btn" href="carrerasenvivo">Ver en vivo</a></li>
+                <br>
+            </div>
 
 
                 {{--<form action="carrerasenvivo">
                     <button class="btn btn-info" type="submit">Ver en vivo</button>
                 </form>--}}
-                <li><a class="md-btn" href="carrerasenvivo">Ver en vivo</a></li>
+
 
             </div>
         </div>
