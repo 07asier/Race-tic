@@ -13,47 +13,51 @@
     <div class="container ">
         <div class="row well-sm well">
             <div class="col-md-10 ">
-            <h3>En vivo</h3>
+                <h3>En vivo</h3>
 
 
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Datos Generales</h3>
-                            <div class="pull-right">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Datos Generales</h3>
+                        <div class="pull-right">
                                 <span class="refrescar clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-								<i class="glyphicon glyphicon-refresh"></i>Actualizar
-							</span>
-                            </div>
+                        <i class="glyphicon glyphicon-refresh"></i>Actualizar
+                     </span>
                         </div>
-
-                        <table class="table table-hover" id="dev-table">
-                            <thead>
-                            <tr>
-                                <th>Id Carrera</th>
-                                <th>Numero serie</th>
-                                <th>Velocidad</th>
-                                <th>Revoluciones</th>
-                                <th>Temperatura </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-
-                                <?php $id = Auth::user()->id;
-                                $carreras = DB::table('carreras')->where("usuario_id",$id)->get();?>
-
-                                @foreach($carreras as $key => $data)
-                                <th>{{$data->id_carrera}}</th>
-                                <th>{{$data->n_serie}}</th>
-                                <th>{{$data->velocidad}}</th>
-                                <th>{{$data->revoluciones}}</th>
-                                <th>{{$data->temperatura}}</th>
-                                @endforeach
-                            </tr>
-                            </tbody>
-                        </table>
                     </div>
-                    </div>
+
+                    <table class="table table-hover" id="dev-table">
+                        <thead>
+                        <tr>
+                            <th>Id Carrera</th>
+                            <th>Numero serie</th>
+                            <th>Velocidad</th>
+                            <th>Revoluciones</th>
+                            <th>Temperatura </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                            <?php
+                            $id = Auth::user()->id;
+                            $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
+                            ?>
+
+                            @foreach($carreras as $key => $data)
+
+                                    <th>{{$data->id_carrera}}</th>
+                                    <th>{{$data->n_serie}}</th>
+                                    <th>{{$data->velocidad}}</th>
+                                    <th>{{$data->revoluciones}}</th>
+
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <canvas id="myChart" width="400" height="250"></canvas>
 
@@ -63,7 +67,6 @@
         </div>
 
     </div>
-
 
     <script>
         var canvas = document.getElementById('myChart');
@@ -91,8 +94,8 @@
                     pointHoverBorderWidth: 2,
                     pointRadius: 5,
                     pointHitRadius: 10,
-                    data: [{{$data->velocidad}}],
-
+                    data: ["{{$data->revoluciones}}"],
+                    @endforeach
 
                 }
             ]
@@ -177,6 +180,8 @@
         });
 
     </script>
+
+
 
 
 
