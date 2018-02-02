@@ -24,7 +24,7 @@
                     <td class="contenidoTabla"><a href="{{ url('/adminEditarUsuario/'.$data->id) }}" class="boton editar">Editar</a></td>
                     <td class="contenidoTabla" id="confirmacion">
                         @if($data -> verified == 0)
-                            <img src="../images/x_no.png" />
+                            <img src="../images/raceticadmin.png" />
                         @else
                             <img src="../images/tick_si.png" />
                         @endif
