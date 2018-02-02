@@ -34,6 +34,8 @@
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css">
 
+
+
     <link href="css/estiloshome.css" rel="stylesheet">
 
 

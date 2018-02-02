@@ -15,12 +15,6 @@
             <div class="col-md-10 ">
             <h3>En vivo</h3>
 
-                <?php $id = Auth::user()->id;
-                $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
-
-                ?>
-
-                @foreach($carreras as $key => $data)
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -39,27 +33,26 @@
                                 <th>Numero serie</th>
                                 <th>Velocidad</th>
                                 <th>Revoluciones</th>
-                                <th>Temperatura agua</th>
-                                <th>Temperatura aceite</th>
+                                <th>Temperatura </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{{$data->id_carrera}}</td>
-                                <td>{{$data->n_serie}}</td>
-                                <td>{{$data->velocidad}}</td>
-                                <td>{{$data->revoluciones}}</td>
-                                <td>vacio</td>
-                                <td>vacio</td>
+
+                                <?php $id = Auth::user()->id;
+                                $carreras = DB::table('carreras')->where("usuario_id",$id)->get();?>
+
+                                @foreach($carreras as $key => $data)
+                                <th>{{$data->id_carrera}}</th>
+                                <th>{{$data->n_serie}}</th>
+                                <th>{{$data->velocidad}}</th>
+                                <th>{{$data->revoluciones}}</th>
+                                <th>{{$data->temperatura}}</th>
+                                @endforeach
                             </tr>
                             </tbody>
                         </table>
                     </div>
-
-
-                {{--<button  class="refrescar md-btn ">
-                    <span class="glyphicon glyphicon-refresh"></span> Actualizar
-                </button>--}}
                     </div>
 
             <canvas id="myChart" width="400" height="250"></canvas>
@@ -70,7 +63,6 @@
         </div>
 
     </div>
-
 
 
     <script>
@@ -101,7 +93,7 @@
                     pointHitRadius: 10,
                     data: [{{$data->velocidad}}],
 
-                    @endforeach
+
                 }
             ]
         };
@@ -112,7 +104,7 @@
                 <?php $id = Auth::user()->id;
                     $carreras2 = DB::table('carreras')->where("usuario_id",$id)->get();?>
                         @foreach($carreras2 as $key1 => $data2)
-                myLineChart.data.datasets[0].data[i+1] = "{{$data2->velocidad}}";
+                    myLineChart.data.datasets[0].data[i+1] = "{{$data2->velocidad}}";
                 myLineChart.data.labels[i+1] = "{{$data2->created_at}}";
                 myLineChart.update();
                 @endforeach
@@ -129,7 +121,7 @@
             options:option
         });
 
-        /*var canvas = document.getElementById('myChart');
+        var canvas = document.getElementById('myChart');
         var myLineChart = Chart.Line(canvas,{
             data:{
 
@@ -176,7 +168,7 @@
                     }]
                 }
             }
-        });*/
+        });
 
         $(".refrescar").on("click",function(){
 
@@ -184,6 +176,8 @@
             //location.reload();
         });
 
-</script>
+    </script>
+
+
 
 @endsection
