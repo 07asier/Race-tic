@@ -48,9 +48,7 @@
 
                                     <th>{{$data->id_carrera}}</th>
                                     <th>{{$data->n_serie}}</th>
-                                    <th>{{$data->velocidad}}</th>
-                                    <th>{{$data->revoluciones}}</th>
-                                    <th>{{$data->temperatura}}</th>
+                                @endforeach
 
                         </tr>
                         </tbody>
@@ -72,7 +70,7 @@
         canvas.height = 120;
 
         var data = {
-            labels: ["{{$data->created_at}}"],
+            labels: ["data"],
             datasets: [
                 {
                     label: "Velocidad",
@@ -93,8 +91,8 @@
                     pointHoverBorderWidth: 2,
                     pointRadius: 5,
                     pointHitRadius: 10,
-                    data: ["{{$data->temperatura}}"],
-                    @endforeach
+                    data: ["dato"],
+
 
                 }
             ]
@@ -106,7 +104,7 @@
                 <?php $id = Auth::user()->id;
                     $carreras2 = DB::table('carreras')->where("usuario_id",$id)->get();?>
                 @foreach($carreras2 as $key1 => $data2)
-                    myLineChart.data.datasets[0].data[i+1] = "{{$data2->velocidad}}";
+                    myLineChart.data.datasets[0].data[i+1] = "{{$data2->n_serie}}";
                     myLineChart.data.labels[i+1] = "{{$data2->created_at}}";
                     myLineChart.update();
                 @endforeach
@@ -174,7 +172,7 @@
 
         $(".refrescar").on("click",function(){
 
-            addData();
+            //addData();
             //location.reload();
         });
 

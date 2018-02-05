@@ -23,4 +23,9 @@ class Carrera extends Model
     {
         return $this->belongsTo('App\Coche');
     }
+    //Parte 1
+    public function registro()
+    {
+        return $this->hasMany('App\CarreraRegistro');
+    }
 }

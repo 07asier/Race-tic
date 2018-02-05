@@ -18,9 +18,7 @@ class CreateCarrerasTable extends Migration
             $table->increments('id_carrera');
             $table->integer('n_serie')->unsigned();
             $table->integer('usuario_id')->unsigned();
-            $table->integer('velocidad');
-            $table->integer('revoluciones');
-            $table->integer('temperatura');
+
             $table->rememberToken();
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
