@@ -28,16 +28,33 @@
                         <tr>
                             <th>Id Carrera</th>
                             <th>Numero serie</th>
+                            <th>Fecha</th>
                             <th>Marca</th>
                             <th>Modelo</th>
-                            <th>Fecha </th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
+                            @php
+                            $id = Auth::user()->id;
+                            $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
+                            $coches = DB::table('coches')->where("user_id",$id)->get();
+                            @endphp
+
+                            @foreach($carreras as $key => $data)
+                                <th>{{$data->id_carrera}}</th>
+                                <th>{{$data->n_serie}}</th>
+                                <th>{{$data->created_at}}</th>
+                            @endforeach
+                            @foreach($coches as $key2 => $data2)
+                                <th>{{$data2->marca}}</th>
+                                <th>{{$data2->modelo}}</th>
+                            @endforeach
+
+                            <th>
+                            <button  data-toggle="modal" data-target="#info-modal" class="info-modal material-button material-button-toggle pull-right" type="button">
+                                <span class="fa fa-plus" aria-hidden="true"></span>
+                            </button></th>
 
                         </tr>
                         </tbody>
