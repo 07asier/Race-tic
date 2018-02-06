@@ -42,12 +42,14 @@
                             <?php
                             $id = Auth::user()->id;
                             $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
+
                             ?>
 
                             @foreach($carreras as $key => $data)
 
                                     <th>{{$data->id_carrera}}</th>
                                     <th>{{$data->n_serie}}</th>
+                                    <th>{{}}</th>
                                 @endforeach
 
                         </tr>

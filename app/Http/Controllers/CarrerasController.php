@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CarrerasController extends Controller
 {
@@ -13,6 +15,8 @@ class CarrerasController extends Controller
         $this->middleware('auth')->except(['logout', 'userLogout']);
     }
     public function index(){
+
+
         return view('Carreras.carreras');
     }
 
