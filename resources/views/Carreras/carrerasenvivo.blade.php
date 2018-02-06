@@ -13,47 +13,72 @@
     <div class="container ">
         <div class="row well-sm well">
             <div class="col-md-10 ">
-                <h3>En vivo</h3>
+                <h3></h3>
+                @php
+                    $id = Auth::user()->id;
+                    $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
+                    $coches = DB::table('coches')->where("user_id",$id)->get();
 
+                    foreach($coches as $dataob){
+
+                    $marca = $dataob->marca;
+                    $modelo = $dataob->modelo;
+                    }
+
+
+
+
+                    $arraycarreras = array();
+                    foreach($carreras as $key3 => $data3){
+                        $carrerasreg = DB::table('carreras_registros')->where("carrera_id",$data3->id_carrera)->get();
+                        array_push($arraycarreras, $carrerasreg);
+
+                        $nserie = $data3->n_serie;
+                    }
+
+                @endphp
 
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Datos Generales</h3>
+                        <h3 class="panel-title">Datos en vivo</h3>
+                        <h3 class=" panel-title text-center">{{$marca}} {{$modelo}}</h3>
                         <div class="pull-right">
                                 <span class="refrescar clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
                         <i class="glyphicon glyphicon-refresh"></i>Actualizar
                      </span>
                         </div>
                     </div>
-
                     <table class="table table-hover" id="dev-table">
                         <thead>
+                        </thead>
+                        <thead>
                         <tr>
-                            <th>Id Carrera</th>
-                            <th>Numero serie</th>
                             <th>Velocidad</th>
                             <th>Revoluciones</th>
                             <th>Temperatura </th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
 
-                            <?php
-                            $id = Auth::user()->id;
-                            $carreras = DB::table('carreras')->where("usuario_id",$id)->get();
 
-                            ?>
+                        @foreach ($arraycarreras as $arrayCarrera)
 
-                            @foreach($carreras as $key => $data)
+                            @foreach($arrayCarrera as $object)
 
-                                    <th>{{$data->id_carrera}}</th>
-                                    <th>{{$data->n_serie}}</th>
-                                    <th>{{}}</th>
-                                @endforeach
+                                <tr>
+                                    <th>{{ $object->velocidad }}</th>
+                                    <th>{{ $object->revoluciones }}</th>
+                                    <th>{{ $object->temperatura }}</th>
 
-                        </tr>
+                                </tr>
+
+                            @endforeach
+                        @endforeach
+
+
+
                         </tbody>
+
                     </table>
                 </div>
             </div>
@@ -72,10 +97,11 @@
         canvas.height = 120;
 
         var data = {
-            labels: ["data"],
+            @foreach($carrerasreg as $objgraf)
+            labels: ["{{$objgraf->created_at}}"],
             datasets: [
                 {
-                    label: "Velocidad",
+                    label: "Temperatura ºC",
                     fill: false,
                     lineTension: 0.1,
                     backgroundColor: "rgba(75,192,192,0.4)",
@@ -93,27 +119,14 @@
                     pointHoverBorderWidth: 2,
                     pointRadius: 5,
                     pointHitRadius: 10,
-                    data: ["dato"],
-
+                    data: ["{{$objgraf->temperatura}}"],
+             @endforeach
 
                 }
             ]
         };
 
-        function addData(){
-            var datasetLength = myLineChart.data.datasets[0].data.length;
-            for(var i=0;i<datasetLength;i++) {
-                <?php $id = Auth::user()->id;
-                    $carreras2 = DB::table('carreras')->where("usuario_id",$id)->get();?>
-                @foreach($carreras2 as $key1 => $data2)
-                    myLineChart.data.datasets[0].data[i+1] = "{{$data2->n_serie}}";
-                    myLineChart.data.labels[i+1] = "{{$data2->created_at}}";
-                    myLineChart.update();
-                @endforeach
-            }
 
-
-        }
 
         var option = {
             showLines: true
@@ -123,59 +136,13 @@
             options:option
         });
 
-        var canvas = document.getElementById('myChart');
-        var myLineChart = Chart.Line(canvas,{
-            data:{
 
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
-                datasets: [
-                    {
-                        label: "Dataset Temperatura",
-                        data: [65, 59, 80, 81, 56, 55, 40],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-
-
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options:{
-                scales: {
-                    yAxes:[{
-                        stacked:true,
-                        gridLines: {
-                            display:true,
-                            color:"rgba(255,99,132,0.2)"
-                        }
-                    }],
-                    xAxes:[{
-                        gridLines: {
-                            display:false
-                        }
-                    }]
-                }
-            }
-        });
 
         $(".refrescar").on("click",function(){
 
             //addData();
-            //location.reload();
+
+            location.reload();
         });
 
     </script>

@@ -27,7 +27,7 @@
                         <thead>
                         <tr>
                             <th>Id Carrera</th>
-                            <th>Numero serie</th>
+                            <th>Numero serie OBD</th>
                             <th>Fecha</th>
                             <th>Marca</th>
                             <th>Modelo</th>
